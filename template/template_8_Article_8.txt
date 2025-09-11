@@ -1,0 +1,8 @@
+Article 8: Personal Data
+
+
+The Parties shall minimize the disclosure of Personal Data as defined in the General Data Protection Regulation (Regulation (EU) 2016/679) or in any applicable law or regulation as part of the Confidential Information (hereinafter referred to as “Personal Data”). If it is necessary for a Party to exchange Confidential Information which contains Personal Data to the other Party in relation to the Purpose, such Personal Data will be considered to be Confidential Information under this Agreement and will be processed by the Receiving Party acting as “data controller” in compliance with applicable data protection laws and regulations. There will be no disclosure of Personal Data to third parties under any circumstances.
+
+
+
+

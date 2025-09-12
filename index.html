@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspector de Contratos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            margin: 0;
+            color: #333;
+        }
+        h2 {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        #panel-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 200px;
+        }
+        .contract-info {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            background-color: #f9f9f9;
+        }
+        .header-actions {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Inspector contratos</h1>
+        <h2>Project buyer Team</h2>
+
+        <div class="header-actions">
+            <button class="btn" onclick="loadContract()">
+                🡅 Cargar contrato
+            </button>
+        </div>
+    </div>
+    
+    <div id="panel-container">
+        <!-- Aquí se mostrará la información del archivo -->
+    </div>
+
+    <script>
+        function loadContract() {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '.pdf';
+            
+            fileInput.onchange = function(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+                
+                // Mostrar información del archivo cargado
+                const panelContainer = document.getElementById('panel-container');
+                
+                const info = `
+                    <div class="contract-info">
+                        <h3>Archivo cargado:</h3>
+                        <p><strong>Nombre:</strong> ${file.name}</p>
+                        <p><strong>Tamaño:</strong> ${(file.size / 1024).toFixed(2)} KB</p>
+                        <p><strong>Tipo:</strong> ${file.type}</p>
+                    </div>
+                `;
+                
+                panelContainer.innerHTML = info;
+                
+                // Copiar el archivo a input.pdf en el directorio local
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                fetch('http://localhost:5000/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        panelContainer.innerHTML += `
+                            <div class="contract-info">
+                                <p>✅ Archivo guardado como input.pdf</p>
+                            </div>
+                        `;
+                    } else {
+                        throw new Error(data.error);
+                    }
+                })
+                .catch(error => {
+                    panelContainer.innerHTML += `
+                        <div class="contract-info" style="border-left-color: #f44336;">
+                            <p>❌ Error al guardar el archivo: ${error.message}</p>
+                        </div>
+                    `;
+                });
+            };
+            
+            fileInput.click();
+        }
+    </script>
+</body>
+</html>

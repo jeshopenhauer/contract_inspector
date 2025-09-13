@@ -1,0 +1,18 @@
+Article 14: Export control
+
+The Parties shall respect all applicable export control treaties, legislation or regulations. They
+shall not possess or be possessed by or work with, directly or indirectly, any legal entity or
+individual which are subject to export control sanctions anywhere, worldwide.
+
+The Parties shall obtain any necessary export license or other documentation prior to the
+exportation or re-exportation of any product, technical data, software or software source code
+covered under this Agreement or any direct product of such technical data, software or
+software source code.
+
+Accordingly, neither Party shall sell, export, re-export, transfer, divert or otherwise dispose of
+any such product,technical data, software or software source code directly or indirectly to any
+person, firm, entity, country or countries prohibited by treaty, U.S., EU or other applicable
+laws.
+
+Each Party shall secure, at its own expense, such licenses and export and import documents as
+are necessary for each respective Party to fulfill its obligations under this Agreement.

@@ -1,9 +1,4 @@
-﻿CONFIDENTIALITY AGREEMENT
-
-
-
-
-Between:
+﻿Between:
 
 
 [Exact name of Valeo legal entity], a [specify legal entity] company organized and existing under the laws of [Country], the registered office of which is [address], registered under the number [number] at the Trade and Companies Registry of [City],
@@ -14,7 +9,3 @@ Represented by Mr./Ms. [First name, Last name] acting as [position], duly author
 
 Hereinafter referred to as “Valeo”,
 On the one hand
-
-
-
-

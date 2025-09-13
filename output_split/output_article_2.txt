@@ -1,0 +1,33 @@
+Article 2: Exclusions
+
+The obligations of confidentiality under this Agreement shall not apply to Confidential
+Information that:
+
+was, as of the Effective Date, or has subsequently become, publicly known through no
+
+a)
+wrongful act of the Receiving Party;
+
+b)
+has been disclosed by a third party (other than a duly authorized third party under
+Article 3 hereof) without restriction, unless the Receiving Party knew or ought to have known
+under the circumstances, that the information had been obtained directly or indirectly from the
+Disclosing Party and that the disclosure of the information was made unlawfully;
+
+that was already in the possession of the Receiving Party prior to the date of disclosure
+
+c)
+and is not subject to an obligation of confidentiality;
+
+d)
+which is disclosed by a Party to its Affiliate(s) so long as the Affiliates respect the
+same confidentiality obligations as those contained herein. The Party so disclosing the
+Confidential Information to its Affiliate(s) shall remain liable for the actions or omissions of
+its Affiliate(s);
+
+the disclosure of which is authorized by the Disclosing Party in writing in advance of
+
+e)
+the disclosure.
+
+A Party which relies on one of the foregoing exclusions carries the burden of proving it.

@@ -85,15 +85,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hacer las funciones accesibles globalmente
     window.toggleReportCard = toggleReportCard;
     window.removeElement = removeElement;
+    window.clearSavedReports = clearSavedReports;
+    
+    // Cargar reportes guardados desde localStorage
+    loadSavedReports();
 });
+
+// Función para obtener la URL base del servidor
+function getServerBaseUrl() {
+    // Si estamos en localhost, usar también localhost para el servidor
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return 'http://127.0.0.1:5000';
+    }
+    
+    // En otro caso, intentar usar la misma IP pero puerto 5000
+    return `http://${window.location.hostname}:5000`;
+}
 
 // Función para verificar el estado de la conexión al servidor
 function checkServerConnection() {
     const indicator = document.getElementById('server-indicator');
     const statusText = document.getElementById('server-status-text');
     
-    // Usar la IP directa para evitar problemas de CORS
-    const serverUrl = `http://127.0.0.1:5000/?t=${Date.now()}`; // Añadir timestamp para evitar caché
+    // Usar URL dinámica basada en la ubicación actual
+    const serverUrl = `${getServerBaseUrl()}/?t=${Date.now()}`; // Añadir timestamp para evitar caché
     
     console.log(`Verificando conexión con el servidor en: ${serverUrl}`);
     
@@ -157,9 +172,8 @@ function loadContract() {
         
         console.log('Enviando archivo al servidor...');
         
-        // Usar la URL dinámica basada en el host actual pero con el puerto 5000
-        // En este caso usamos directamente 127.0.0.1 para evitar problemas de CORS
-        const serverUrl = `http://127.0.0.1:5000/upload`;
+        // Usar URL dinámica basada en la ubicación actual
+        const serverUrl = `${getServerBaseUrl()}/upload`;
         console.log(`Conectando con el servidor en: ${serverUrl}`);
         
         fetch(serverUrl, {
@@ -210,6 +224,9 @@ function loadContract() {
                             </div>
                         </div>
                     `;
+                    
+                    // Guardar el reporte en localStorage
+                    saveReportToLocalStorage(reportId, file.name, data.html);
                     
                     // Expandir automáticamente la tarjeta
                     setTimeout(() => toggleReportCard(reportId), 100);
@@ -288,6 +305,9 @@ function removeElement(id, event) {
         setTimeout(() => {
             if (element.parentNode) {
                 element.parentNode.removeChild(element);
+                
+                // Eliminar también del almacenamiento local
+                removeReportFromLocalStorage(id);
             }
         }, 300);
     }
@@ -297,8 +317,8 @@ function removeElement(id, event) {
 function analyzeContract() {
     const panelContainer = document.getElementById('panel-container');
     
-    // Usar la IP directa para evitar problemas de CORS
-    const serverUrl = `http://127.0.0.1:5000/analyze?format=html&t=${Date.now()}`; // Añadir timestamp para evitar caché
+    // Usar URL dinámica basada en la ubicación actual
+    const serverUrl = `${getServerBaseUrl()}/analyze?format=html&t=${Date.now()}`; // Añadir timestamp para evitar caché
     console.log(`Solicitando análisis desde: ${serverUrl}`);
     
     // Mostrar mensaje de que se está realizando el análisis
@@ -378,6 +398,9 @@ function analyzeContract() {
                 </div>
             `;
             
+            // Guardar el reporte en localStorage
+            saveReportToLocalStorage(reportId, "Análisis del Contrato", data.html);
+            
             // Expandir automáticamente la tarjeta
             setTimeout(() => toggleReportCard(reportId), 100);
             
@@ -399,4 +422,128 @@ function analyzeContract() {
         // Mostrar mensaje de error como flash
         showFlashMessage(`❌ Error al analizar el contrato: ${error.message}. Comprueba la consola del navegador (F12) para más detalles.`, 'error', panelContainer, 5000);
     });
+}
+
+// Función para guardar un reporte en localStorage
+function saveReportToLocalStorage(reportId, title, htmlContent) {
+    try {
+        // Obtener los reportes existentes o inicializar un arreglo vacío
+        let savedReports = JSON.parse(localStorage.getItem('contractReports')) || [];
+        
+        // Añadir el nuevo reporte
+        savedReports.push({
+            id: reportId,
+            title: title,
+            html: htmlContent,
+            date: new Date().toISOString()
+        });
+        
+        // Limitar a los 5 reportes más recientes para no sobrecargar el localStorage
+        if (savedReports.length > 5) {
+            savedReports = savedReports.slice(-5);
+        }
+        
+        // Guardar en localStorage
+        localStorage.setItem('contractReports', JSON.stringify(savedReports));
+        console.log('Reporte guardado en localStorage:', reportId);
+    } catch (error) {
+        console.error('Error al guardar el reporte en localStorage:', error);
+    }
+}
+
+// Función para eliminar un reporte del localStorage
+function removeReportFromLocalStorage(reportId) {
+    try {
+        // Obtener los reportes existentes
+        const savedReports = JSON.parse(localStorage.getItem('contractReports')) || [];
+        
+        // Filtrar el reporte a eliminar
+        const filteredReports = savedReports.filter(report => report.id !== reportId);
+        
+        // Guardar la lista actualizada
+        localStorage.setItem('contractReports', JSON.stringify(filteredReports));
+        console.log('Reporte eliminado de localStorage:', reportId);
+    } catch (error) {
+        console.error('Error al eliminar el reporte de localStorage:', error);
+    }
+}
+
+// Función para cargar reportes guardados desde localStorage
+function loadSavedReports() {
+    try {
+        // Obtener los reportes guardados
+        const savedReports = JSON.parse(localStorage.getItem('contractReports')) || [];
+        
+        if (savedReports.length > 0) {
+            const panelContainer = document.getElementById('panel-container');
+            
+            // Mostrar mensaje flash informando que se han cargado reportes
+            if (savedReports.length > 0) {
+                showFlashMessage(`ℹ️ Se han cargado ${savedReports.length} reportes guardados`, 'info');
+            }
+            
+            // Mostrar cada reporte como una tarjeta
+            savedReports.forEach(report => {
+                panelContainer.innerHTML += `
+                    <div id="${report.id}" class="report-card">
+                        <div class="report-card-header" onclick="toggleReportCard('${report.id}')">
+                            <h3>${report.title}</h3>
+                            <div style="display: flex; align-items: center;">
+                                <button type="button" class="report-card-toggle" title="Expandir/Colapsar">▼</button>
+                                <button type="button" class="report-card-close" title="Cerrar reporte" onclick="removeElement('${report.id}', event)">×</button>
+                            </div>
+                        </div>
+                        <div class="report-card-content">
+                            ${report.html}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            console.log(`Cargados ${savedReports.length} reportes desde localStorage`);
+        }
+    } catch (error) {
+        console.error('Error al cargar reportes desde localStorage:', error);
+    }
+}
+
+// Función para limpiar todos los reportes guardados
+function clearSavedReports() {
+    try {
+        // Verificar si hay reportes guardados
+        const savedReports = JSON.parse(localStorage.getItem('contractReports')) || [];
+        
+        if (savedReports.length === 0) {
+            showFlashMessage('ℹ️ No hay reportes guardados para eliminar', 'info');
+            return;
+        }
+        
+        // Eliminar los reportes del localStorage
+        localStorage.removeItem('contractReports');
+        
+        // Eliminar las tarjetas de reporte del DOM
+        const panelContainer = document.getElementById('panel-container');
+        const reportCards = panelContainer.querySelectorAll('.report-card');
+        
+        // Animar la eliminación de cada tarjeta
+        reportCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.9)';
+                
+                setTimeout(() => {
+                    if (card.parentNode) {
+                        card.parentNode.removeChild(card);
+                    }
+                }, 300);
+            }, index * 100); // Eliminar con un pequeño retraso entre cada tarjeta para efecto visual
+        });
+        
+        // Mostrar mensaje de éxito
+        showFlashMessage('✅ Todos los reportes han sido eliminados', 'success');
+        console.log('Todos los reportes eliminados de localStorage');
+    } catch (error) {
+        console.error('Error al limpiar reportes:', error);
+        showFlashMessage('❌ Error al eliminar reportes: ' + error.message, 'error');
+    }
 }

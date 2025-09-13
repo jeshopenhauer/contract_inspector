@@ -15,12 +15,24 @@ def main():
         # Usar el intérprete de Python del entorno virtual directamente
         venv_python = ".venv/bin/python"
         if os.path.exists(venv_python):
-            print("Iniciando servidor en http://localhost:5000")
+            # Obtener la dirección IP local para mostrar instrucciones de acceso
+            import socket
+            hostname = socket.gethostname()
+            local_ip = socket.gethostbyname(hostname)
+            print(f"Iniciando servidor en:")
+            print(f"- Local: http://localhost:5000")
+            print(f"- Red local: http://{local_ip}:5000")
             subprocess.call([venv_python, "server.py"])
         else:
             print("No se pudo encontrar el ejecutable de Python en el entorno virtual.")
             print("Intentando con el Python del sistema...")
-            print("Iniciando servidor en http://localhost:5000")
+            # Obtener la dirección IP local para mostrar instrucciones de acceso
+            import socket
+            hostname = socket.gethostname()
+            local_ip = socket.gethostbyname(hostname)
+            print(f"Iniciando servidor en:")
+            print(f"- Local: http://localhost:5000")
+            print(f"- Red local: http://{local_ip}:5000")
             subprocess.call(["python", "server.py"])
     else:
         print("No se encontró un entorno virtual.")
@@ -31,7 +43,13 @@ def main():
         
         # Intentar ejecutar directamente con Python
         print("Intentando iniciar el servidor directamente...")
-        print("Iniciando servidor en http://localhost:5000")
+        # Obtener la dirección IP local para mostrar instrucciones de acceso
+        import socket
+        hostname = socket.gethostname()
+        local_ip = socket.gethostbyname(hostname)
+        print(f"Iniciando servidor en:")
+        print(f"- Local: http://localhost:5000")
+        print(f"- Red local: http://{local_ip}:5000")
         subprocess.call(["python", "server.py"])
 
 if __name__ == "__main__":

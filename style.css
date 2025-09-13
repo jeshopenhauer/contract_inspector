@@ -46,6 +46,12 @@ body {
         .btn:hover {
             background-color: blue;
         }
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
         #panel-container {
             background-color: #fff;
             padding: 20px;
@@ -370,4 +376,19 @@ body {
         .report-card-close:hover {
             background-color: #f44336;
             color: white;
+        }
+        
+        /* Estilos para las tablas ASCII */
+        .ascii-table {
+            font-family: monospace;
+            white-space: pre;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+            margin: 10px 0;
+            color: #333;
+            line-height: 1.5;
+            border: 1px solid #ddd;
+            font-size: 14px;
         }

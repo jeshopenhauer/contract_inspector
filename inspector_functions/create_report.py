@@ -252,8 +252,13 @@ def get_report_html(report):
     if report["paragraph_analysis"]:
         html.append('<div class="report-paragraphs">')
         html.append('<h3>Análisis de Párrafos por Sección</h3>')
-        html.append('<table class="report-table">')
-        html.append('<tr><th>Sección</th><th>Párrafos (Contrato)</th><th>Párrafos (Plantilla)</th><th>Relación</th></tr>')
+        
+        # Crear tabla en formato ASCII usando tabulate
+        from tabulate import tabulate
+        
+        # Preparar datos para la tabla
+        table_data = []
+        headers = ['Sección', 'Párrafos (Contrato)', 'Párrafos (Plantilla)', 'Relación']
         
         # Orden específico de secciones
         section_order = ['title', 'between', 'and', 'preamble']
@@ -261,7 +266,7 @@ def get_report_html(report):
             section_order.append(f'article_{i}')
         section_order.append('furthermore')
         
-        # Mostrar secciones en el orden especificado
+        # Preparar filas de datos para tabulate
         for section in section_order:
             if section in report["paragraph_analysis"]:
                 data = report["paragraph_analysis"][section]
@@ -269,10 +274,10 @@ def get_report_html(report):
                     output_count = data['output_paragraphs']
                     template_count = data['template_paragraphs']
                     ratio = data['ratio']
-                    html.append(f'<tr><td>{section}</td><td>{output_count}</td><td>{template_count}</td><td>{ratio}</td></tr>')
+                    table_data.append([section, output_count, template_count, ratio])
                 else:
-                    html.append(f'<tr><td>{section}</td><td colspan="3">ERROR: {data["error"]}</td></tr>')
-                
+                    table_data.append([section, f"ERROR: {data['error']}", "", ""])
+        
         # Mostrar secciones adicionales que no estén en el orden predefinido
         for section, data in report["paragraph_analysis"].items():
             if section not in section_order:
@@ -280,19 +285,31 @@ def get_report_html(report):
                     output_count = data['output_paragraphs']
                     template_count = data['template_paragraphs']
                     ratio = data['ratio']
-                    html.append(f'<tr><td>{section}</td><td>{output_count}</td><td>{template_count}</td><td>{ratio}</td></tr>')
+                    table_data.append([section, output_count, template_count, ratio])
                 else:
-                    html.append(f'<tr><td>{section}</td><td colspan="3">ERROR: {data["error"]}</td></tr>')
-                    
-        html.append('</table>')
+                    table_data.append([section, f"ERROR: {data['error']}", "", ""])
+        
+        # Generar tabla ASCII
+        ascii_table = tabulate(table_data, headers=headers, tablefmt="grid")
+        
+        # Añadir la tabla ASCII al HTML como texto preformateado
+        html.append('<pre class="ascii-table">')
+        html.append(ascii_table)
+        html.append('</pre>')
+        
         html.append('</div>')
     
     # Análisis estadístico (resumido)
     if report["statistics"]:
         html.append('<div class="report-statistics">')
         html.append('<h3>Análisis Estadístico por Sección</h3>')
-        html.append('<table class="report-table">')
-        html.append('<tr><th>Sección</th><th>Palabras</th><th>Puntos</th><th>Comas</th><th>Letra "s"</th><th>Vocales (a,e,i,o,u)</th></tr>')
+        
+        # Crear tabla en formato ASCII usando tabulate
+        from tabulate import tabulate
+        
+        # Preparar datos para la tabla
+        table_data = []
+        headers = ['Art.', 'palabras', 'puntos.', 'comas.', 's', 'a', 'e', 'i', 'o', 'u']
         
         # Secciones en orden
         for i in range(1, 16):
@@ -301,17 +318,34 @@ def get_report_html(report):
                 data = report["statistics"][article_key]
                 if 'ratios' in data:
                     ratios = data['ratios']
-                    html.append(f'<tr><td>{article_key}</td>'
-                              f'<td>{ratios.get("word_count", "N/A")}</td>'
-                              f'<td>{ratios.get("period_count", "N/A")}</td>'
-                              f'<td>{ratios.get("comma_count", "N/A")}</td>'
-                              f'<td>{ratios.get("s_count", "N/A")}</td>'
-                              f'<td>{ratios.get("a_count", "N/A")}, {ratios.get("e_count", "N/A")}, '
-                              f'{ratios.get("i_count", "N/A")}, {ratios.get("o_count", "N/A")}, {ratios.get("u_count", "N/A")}</td></tr>')
+                    output_stats = data['output_stats']
+                    template_stats = data['template_stats']
+                    
+                    row = [i]
+                    for key in ['word_count', 'period_count', 'comma_count', 's_count', 
+                               'a_count', 'e_count', 'i_count', 'o_count', 'u_count']:
+                        # Formato como fracción output/template
+                        if template_stats[key] == 0:
+                            if output_stats[key] > 0:
+                                row.append('inf')
+                            else:
+                                row.append('1')
+                        else:
+                            row.append(f"{output_stats[key]}/{template_stats[key]}")
+                    
+                    table_data.append(row)
                 else:
-                    html.append(f'<tr><td>{article_key}</td><td colspan="5">ERROR</td></tr>')
+                    row = [i] + ['ERROR'] * 9
+                    table_data.append(row)
         
-        html.append('</table>')
+        # Generar tabla ASCII
+        ascii_table = tabulate(table_data, headers=headers, tablefmt="grid")
+        
+        # Añadir la tabla ASCII al HTML como texto preformateado
+        html.append('<pre class="ascii-table">')
+        html.append(ascii_table)
+        html.append('</pre>')
+        
         html.append('</div>')
     
     html.append('</div>')  # Cierra report-container

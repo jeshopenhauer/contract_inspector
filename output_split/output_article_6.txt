@@ -1,23 +1,15 @@
 Article 6: Effective Date/Duration/Termination
 
-This Agreement shall enter into force as of the date of signature of the last signing
-
-6.1
+6.1 This Agreement shall enter into force as of the date of signature of the last signing
 Party and shall remain in force for an unlimited period.
 
-Each Supplement
-
-6.2
+6.2 Each Supplement is entered into for a determined period as specified in such
 Supplement, and shall remain in full force and effect for such period.
 
-is entered into for a determined period as specified in such
-
-6.3
-In case of termination of the present Agreement, any Supplement between the Parties
+6.3 In case of termination of the present Agreement, any Supplement between the Parties
 shall continue until the end of the duration provided in the Supplement, unless otherwise
 agreed by the Parties.
 
-6.4
-The Receiving Party’s obligations contained in this Agreement to keep confidential
+6.4 The Receiving Party’s obligations contained in this Agreement to keep confidential
 and restrict the use of the Disclosing Party’s Confidential Information shall survive for a
 period of five (5) years from the date of expiration of the Supplement.

@@ -3,8 +3,8 @@ PDF to Text Converter and Normalizer
 
 This script:
 1. Extracts text from PDF files with better handling of spacing using pdfminer.six
-2. Normalizes the text by removing spaces, line breaks, and converting to lowercase
-3. Can compare the normalized text with a reference pattern
+2. Standardizes page breaks with clear markers
+3. Saves both the raw extracted text and the cleaned version with standardized page breaks
 """
 
 import os
@@ -14,6 +14,9 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from io import StringIO
+
+# Import the page break standardization function
+from txt_cleaner import standardize_page_breaks
 
 
 def convert_pdf_to_text(pdf_path):
@@ -125,7 +128,8 @@ if __name__ == "__main__":
     
     # Construimos las rutas absolutas
     input_pdf = os.path.join(root_dir, "input.pdf")
-    output_txt = os.path.join(root_dir, "output.txt")
+    temp_txt = os.path.join(root_dir, "output_temp.txt")  # Archivo temporal
+    output_txt = os.path.join(root_dir, "output.txt")     # Archivo final
     
 
     # Step 1: Convert PDF to text
@@ -136,17 +140,22 @@ if __name__ == "__main__":
         print("Conversion failed. Check the errors above.")
         exit(1)
     
-    # Step 2: Save the extracted text to file
-    save_text_to_file(extracted_text, output_txt)
+    # Step 2: Save the extracted text to a temporary file
+    save_text_to_file(extracted_text, temp_txt)
     
     # Step 3: Show a preview of the extracted text
     print("\n2. Preview of extracted text:")
     compare_preview(extracted_text)
     
-    # Step 4: Normalize the extracted text
-    print(f"\n3. Normalizing extracted text...")
-
+    # Step 4: Standardize page breaks and save directly to output.txt
+    print(f"\n3. Standardizing page breaks...")
+    cleaned_output_path = standardize_page_breaks(temp_txt, output_txt)
+    
+    # Step 5: Remove the temporary file
+    if os.path.exists(temp_txt):
+        os.remove(temp_txt)
+        print(f"Temporary file removed")
     
     print("\nProcess completed!")
-    print(f"- Original text saved to: {output_txt}")
+    print(f"- Text with standardized page breaks saved to: {cleaned_output_path}")
 

@@ -4,15 +4,16 @@ a) If Valeo and the Partner are based in the same country:
 
 The law of Spain, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+
+===PAGE_BREAK===
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
 The competent court of Madrid shall have exclusive jurisdiction over any disputes arising
 hereunder.
 
 b) If the Partner is based in any member state country of the European Union, the
-European Economic Area,
-the Lugano Conventions, Austria, Belgium,
+European Economic Area, the Lugano Conventions, Austria, Belgium,
 Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia,
 Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia,
 Lichtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland,
@@ -56,7 +57,9 @@ four
 ever have been a national of France or China. The arbitration shall be conducted in English
 and
 
-all documents shall be in English. Each Party shall be responsible for half of the costs and
+
+===PAGE_BREAK===
+all documents shall be in English. Each Party shall be responsible for half of the costs and
 fees of the arbitration. The arbitral award shall be final and binding on the Parties.
 
 e) If the Partner is based in the UK:
@@ -101,20 +104,18 @@ excluded.
 The competent courts of New Delhi, India shall have exclusive jurisdiction over any
 disputes arising hereunder.
 
-i)
-
-If the Partner is based in Japan:
+i) If the Partner is based in Japan:
 
 Japanese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+
+===PAGE_BREAK===
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
 The District of Tokyo shall have exclusive jurisdiction over any disputes arising hereunder.
 
-j)
-
-If the Partner is based in Korea:
+j) If the Partner is based in Korea:
 
 Korean law, excluding any rules of conflict of laws, shall govern this Agreement.
 
@@ -134,9 +135,7 @@ excluded.
 The competent courts of Istanbul, Turkey shall have exclusive jurisdiction over any
 disputes arising hereunder.
 
-l)
-
-If the Partner is based in Vietnam:
+l) If the Partner is based in Vietnam:
 
 Vietnamese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
@@ -161,7 +160,9 @@ n) If the Partner is based in a country other than those mentioned above:
 The law of the country in which the Partner is located, excluding any rules of conflict of
 laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+
+===PAGE_BREAK===
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
 The competent court of the capital city in the country in which the Partner is located shall

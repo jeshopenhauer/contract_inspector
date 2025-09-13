@@ -47,7 +47,9 @@ In order to pursue the Purpose, each Party may, directly or through its Affiliat
 provide to the other Party, directly or through its Affiliates, with certain information which is
 confidential, proprietary and otherwise not generally available to the public.
 
-Therefore, the Parties have decided to enter into the present framework confidentiality
+
+===PAGE_BREAK===
+Therefore, the Parties have decided to enter into the present framework confidentiality
 agreement, which shall govern the disclosure and/or exchange of information pursuant to the
 signature of a Supplement for each project referring to the present framework confidentiality
 agreement (hereinafter the “Agreement”).
@@ -96,7 +98,9 @@ notably provide the details of (the list being not exhaustive):
 The Supplement will be established and signed prior to the exchange of Confidential
 Information.
 
-Article 2: Exclusions
+
+===PAGE_BREAK===
+Article 2: Exclusions
 
 The obligations of confidentiality under this Agreement shall not apply to Confidential
 Information that:
@@ -152,7 +156,9 @@ shall only be used by the Receiving Party in direct relation with the Purpose.
 
 Article 4: Restrictions
 
-The provisions of this Agreement shall not be construed as implying an obligation of either
+
+===PAGE_BREAK===
+The provisions of this Agreement shall not be construed as implying an obligation of either
 Party:
 
 to provide any Confidential Information to the other Party, whether at its own
@@ -206,7 +212,9 @@ Receiving Party shall, if required by the Disclosing Party, return the Confident
 and authorized copies within fifteen (15) calendar days and/or delete such from all computer
 files. If agreed by the Disclosing Party, the Confidential Information and authorized copies
 
-thereof may also be destroyed by the Receiving Party. The Receiving Party shall provide a
+
+===PAGE_BREAK===
+thereof may also be destroyed by the Receiving Party. The Receiving Party shall provide a
 prompt written Notice to such effect.
 
 7.2 Notwithstanding the foregoing paragraph, the Receiving Party may retain archival
@@ -249,7 +257,9 @@ a) If Valeo and the Partner are based in the same country:
 
 The law of Spain, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+
+===PAGE_BREAK===
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
 The competent court of Madrid shall have exclusive jurisdiction over any disputes arising
@@ -300,7 +310,9 @@ four
 ever have been a national of France or China. The arbitration shall be conducted in English
 and
 
-all documents shall be in English. Each Party shall be responsible for half of the costs and
+
+===PAGE_BREAK===
+all documents shall be in English. Each Party shall be responsible for half of the costs and
 fees of the arbitration. The arbitral award shall be final and binding on the Parties.
 
 e) If the Partner is based in the UK:
@@ -349,7 +361,9 @@ i) If the Partner is based in Japan:
 
 Japanese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+
+===PAGE_BREAK===
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
 The District of Tokyo shall have exclusive jurisdiction over any disputes arising hereunder.
@@ -399,7 +413,9 @@ n) If the Partner is based in a country other than those mentioned above:
 The law of the country in which the Partner is located, excluding any rules of conflict of
 laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+
+===PAGE_BREAK===
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
 The competent court of the capital city in the country in which the Partner is located shall
@@ -439,7 +455,9 @@ laws.
 Each Party shall secure, at its own expense, such licenses and export and import documents as
 are necessary for each respective Party to fulfill its obligations under this Agreement.
 
-Article 15: Notice
+
+===PAGE_BREAK===
+Article 15: Notice
 
 Notice shall be delivered to the following addresses:
 
@@ -479,7 +497,9 @@ Title: Sales Manager
 
 Date:23/01/25
 
-APPENDIX 1: SUPPLEMENT TO THE
+
+===PAGE_BREAK===
+APPENDIX 1: SUPPLEMENT TO THE
 FRAMEWORK CONFIDENTIALITY AGREEMENT
 
 The present Supplement is entered into by and between VALEO ILUMINACIÓN S.A.
@@ -525,4 +545,5 @@ Title: Sales Manager
 
 Date:23/01/25
 
-
+
+===PAGE_BREAK===

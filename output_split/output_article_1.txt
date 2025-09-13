@@ -1,15 +1,12 @@
 Article 1: Definitions
 
-“Confidential Information” means any information, knowledge or data of any nature
-1.1
-whatsoever (including but not
-limited to financial, industrial, technical and commercial
+1.1 “Confidential Information” means any information, knowledge or data of any nature
+whatsoever (including but not limited to financial, industrial, technical and commercial
 information), in whatever form (including but not limited to drawings, diagrams, graphs,
 descriptions, specifications, software, manuals, formulae, prototypes, samples, products),
 whether protected or not by any intellectual or industrial property right, which is disclosed by
 a Party (the “Disclosing Party”), on whatever media (including but not limited to orally, in
-telecommunications or computer processes) or
-writing, magnetic or electronic means,
+writing, magnetic or electronic means, telecommunications or computer processes) or
 whatever means (including but not limited to site visits and product demonstrations) to the
 other Party (the “Receiving Party”). Confidential Information can include but is not limited to
 (a) the existence and objectives of the Purpose, (b) the terms of this Agreement, and (c) any
@@ -17,8 +14,7 @@ information that the Receiving Party may have derived from the Confidential Info
 result of its examination thereof, for example but not limited to laboratory test results,
 analytical notes, benchmarking conclusions and the like.
 
-1.2
-“Affiliate(s)” means any legal entity directly or indirectly owned or controlled by or
+1.2 “Affiliate(s)” means any legal entity directly or indirectly owned or controlled by or
 owning or controlling or under the same ownership or control as a Party and which is not a
 direct or indirect competitor of the Parties. Such ownership or control must exist through the
 direct or indirect ownership of more than 50% of the voting rights or by the ownership of any
@@ -29,28 +25,22 @@ similar functions who have a majority vote. Legal entities belonging to the same
 Party and which carry out an activity which competes with that of the other Party are
 excluded from this definition.
 
-“Effective Date” means the date on which a Supplement is signed by the last of the
-
-1.3
+1.3 “Effective Date” means the date on which a Supplement is signed by the last of the
 two Parties.
 
-“Notice” means a registered letter with return receipt requested or an overnight carrier
-
-1.4
+1.4 “Notice” means a registered letter with return receipt requested or an overnight carrier
 such as DHL or FedEx.
 
-“Supplement” means a supplement to the present Agreement, a form of which is
-1.5
+1.5 “Supplement” means a supplement to the present Agreement, a form of which is
 attached in Appendix 1, entered into between the Parties for a specific project, which will
 notably provide the details of (the list being not exhaustive):
 
--
--
--
-
-the Purpose,
-the Effective Date of the Supplement, and
-the duration of the Supplement.
+- the Purpose,
+- the Effective Date of the Supplement, and
+- the duration of the Supplement.
 
 The Supplement will be established and signed prior to the exchange of Confidential
 Information.
+
+
+===PAGE_BREAK===

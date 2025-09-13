@@ -31,7 +31,9 @@ In order to pursue the Purpose, each Party may, directly or through its Affiliat
 provide to the other Party, directly or through its Affiliates, with certain information which is
 confidential, proprietary and otherwise not generally available to the public.
 
-Therefore, the Parties have decided to enter into the present framework confidentiality
+
+===PAGE_BREAK===
+Therefore, the Parties have decided to enter into the present framework confidentiality
 agreement, which shall govern the disclosure and/or exchange of information pursuant to the
 signature of a Supplement for each project referring to the present framework confidentiality
 agreement (hereinafter the “Agreement”).

@@ -1,39 +1,20 @@
 {
-  "timestamp": 1757796450.699687,
-  "date": "2025-09-13 22:47:30",
+  "timestamp": 1757804684.6876967,
+  "date": "2025-09-14 01:04:44",
   "input_file": "input.pdf",
   "status": "complete",
-  "steps": [
-    {
-      "step": "pdf_to_text",
-      "status": "complete"
-    },
-    {
-      "step": "split_text",
-      "status": "complete",
-      "files_created": 19
-    },
-    {
-      "step": "statistics_analysis",
-      "status": "complete"
-    },
-    {
-      "step": "paragraph_analysis",
-      "status": "complete"
-    }
-  ],
   "statistics": {
     "article_1": {
       "output_stats": {
-        "word_count": 430,
-        "period_count": 14,
-        "comma_count": 30,
-        "s_count": 115,
-        "a_count": 147,
-        "e_count": 248,
-        "i_count": 188,
-        "o_count": 179,
-        "u_count": 49
+        "word_count": 358,
+        "period_count": 11,
+        "comma_count": 25,
+        "s_count": 97,
+        "a_count": 126,
+        "e_count": 193,
+        "i_count": 164,
+        "o_count": 159,
+        "u_count": 40
       },
       "template_stats": {
         "word_count": 358,
@@ -47,28 +28,28 @@
         "u_count": 40
       },
       "ratios": {
-        "word_count": "1.2011173184357542",
-        "period_count": "1.2727272727272727",
-        "comma_count": "1.2",
-        "s_count": "1.1855670103092784",
-        "a_count": "1.1666666666666667",
-        "e_count": "1.2849740932642486",
-        "i_count": "1.146341463414634",
-        "o_count": "1.1257861635220126",
-        "u_count": "1.225"
+        "word_count": "1.0",
+        "period_count": "1.0",
+        "comma_count": "1.0",
+        "s_count": "1.0",
+        "a_count": "1.0",
+        "e_count": "1.0",
+        "i_count": "1.0",
+        "o_count": "1.0",
+        "u_count": "1.0"
       }
     },
     "article_2": {
       "output_stats": {
-        "word_count": 203,
-        "period_count": 3,
+        "word_count": 174,
+        "period_count": 2,
         "comma_count": 5,
-        "s_count": 68,
-        "a_count": 78,
-        "e_count": 100,
-        "i_count": 100,
-        "o_count": 86,
-        "u_count": 25
+        "s_count": 49,
+        "a_count": 59,
+        "e_count": 93,
+        "i_count": 77,
+        "o_count": 71,
+        "u_count": 29
       },
       "template_stats": {
         "word_count": 170,
@@ -82,28 +63,28 @@
         "u_count": 28
       },
       "ratios": {
-        "word_count": "1.1941176470588235",
-        "period_count": "1.5",
+        "word_count": "1.0235294117647058",
+        "period_count": "1.0",
         "comma_count": "1.0",
-        "s_count": "1.4166666666666667",
-        "a_count": "1.3220338983050848",
-        "e_count": "1.075268817204301",
-        "i_count": "1.2987012987012987",
-        "o_count": "1.2112676056338028",
-        "u_count": "0.8928571428571429"
+        "s_count": "1.0208333333333333",
+        "a_count": "1.0",
+        "e_count": "1.0",
+        "i_count": "1.0",
+        "o_count": "1.0",
+        "u_count": "1.0357142857142858"
       }
     },
     "article_3": {
       "output_stats": {
-        "word_count": 197,
-        "period_count": 5,
-        "comma_count": 3,
-        "s_count": 59,
-        "a_count": 70,
-        "e_count": 117,
-        "i_count": 101,
-        "o_count": 80,
-        "u_count": 24
+        "word_count": 339,
+        "period_count": 10,
+        "comma_count": 7,
+        "s_count": 121,
+        "a_count": 127,
+        "e_count": 217,
+        "i_count": 166,
+        "o_count": 125,
+        "u_count": 38
       },
       "template_stats": {
         "word_count": 339,
@@ -117,15 +98,15 @@
         "u_count": 38
       },
       "ratios": {
-        "word_count": "0.5811209439528023",
-        "period_count": "0.5",
-        "comma_count": "0.42857142857142855",
-        "s_count": "0.48760330578512395",
-        "a_count": "0.5511811023622047",
-        "e_count": "0.5391705069124424",
-        "i_count": "0.608433734939759",
-        "o_count": "0.64",
-        "u_count": "0.631578947368421"
+        "word_count": "1.0",
+        "period_count": "1.0",
+        "comma_count": "1.0",
+        "s_count": "1.0",
+        "a_count": "1.0",
+        "e_count": "1.0",
+        "i_count": "1.0",
+        "o_count": "1.0",
+        "u_count": "1.0"
       }
     },
     "article_4": {
@@ -134,11 +115,11 @@
         "period_count": 1,
         "comma_count": 1,
         "s_count": 17,
-        "a_count": 23,
-        "e_count": 36,
+        "a_count": 22,
+        "e_count": 35,
         "i_count": 29,
         "o_count": 36,
-        "u_count": 6
+        "u_count": 7
       },
       "template_stats": {
         "word_count": 71,
@@ -156,24 +137,24 @@
         "period_count": "1.0",
         "comma_count": "1.0",
         "s_count": "1.0625",
-        "a_count": "1.0454545454545454",
-        "e_count": "1.0285714285714285",
+        "a_count": "1.0",
+        "e_count": "1.0",
         "i_count": "1.0",
         "o_count": "1.0",
-        "u_count": "1.0"
+        "u_count": "1.1666666666666667"
       }
     },
     "article_5": {
       "output_stats": {
-        "word_count": 146,
+        "word_count": 121,
         "period_count": 5,
-        "comma_count": 10,
-        "s_count": 39,
-        "a_count": 52,
-        "e_count": 97,
-        "i_count": 67,
-        "o_count": 63,
-        "u_count": 21
+        "comma_count": 7,
+        "s_count": 33,
+        "a_count": 38,
+        "e_count": 79,
+        "i_count": 52,
+        "o_count": 51,
+        "u_count": 13
       },
       "template_stats": {
         "word_count": 121,
@@ -187,28 +168,28 @@
         "u_count": 13
       },
       "ratios": {
-        "word_count": "1.2066115702479339",
+        "word_count": "1.0",
         "period_count": "1.0",
-        "comma_count": "1.4285714285714286",
-        "s_count": "1.1818181818181819",
-        "a_count": "1.368421052631579",
-        "e_count": "1.2278481012658229",
-        "i_count": "1.2884615384615385",
-        "o_count": "1.2352941176470589",
-        "u_count": "1.6153846153846154"
+        "comma_count": "1.0",
+        "s_count": "1.0",
+        "a_count": "1.0",
+        "e_count": "1.0",
+        "i_count": "1.0",
+        "o_count": "1.0",
+        "u_count": "1.0"
       }
     },
     "article_6": {
       "output_stats": {
-        "word_count": 136,
-        "period_count": 8,
-        "comma_count": 3,
-        "s_count": 37,
-        "a_count": 45,
-        "e_count": 94,
-        "i_count": 57,
-        "o_count": 41,
-        "u_count": 17
+        "word_count": 68,
+        "period_count": 4,
+        "comma_count": 0,
+        "s_count": 16,
+        "a_count": 25,
+        "e_count": 49,
+        "i_count": 29,
+        "o_count": 22,
+        "u_count": 3
       },
       "template_stats": {
         "word_count": 68,
@@ -222,15 +203,15 @@
         "u_count": 3
       },
       "ratios": {
-        "word_count": "2.0",
-        "period_count": "2.0",
-        "comma_count": "inf",
-        "s_count": "2.3125",
-        "a_count": "1.8",
-        "e_count": "1.9183673469387754",
-        "i_count": "1.9655172413793103",
-        "o_count": "1.8636363636363635",
-        "u_count": "5.666666666666667"
+        "word_count": "1.0",
+        "period_count": "1.0",
+        "comma_count": "1.0",
+        "s_count": "1.0",
+        "a_count": "1.0",
+        "e_count": "1.0",
+        "i_count": "1.0",
+        "o_count": "1.0",
+        "u_count": "1.0"
       }
     },
     "article_7": {
@@ -239,9 +220,9 @@
         "period_count": 8,
         "comma_count": 10,
         "s_count": 46,
-        "a_count": 75,
-        "e_count": 129,
-        "i_count": 93,
+        "a_count": 74,
+        "e_count": 128,
+        "i_count": 94,
         "o_count": 73,
         "u_count": 23
       },
@@ -261,9 +242,9 @@
         "period_count": "1.0",
         "comma_count": "1.0",
         "s_count": "1.0222222222222221",
-        "a_count": "1.0135135135135136",
-        "e_count": "1.0078125",
-        "i_count": "0.9893617021276596",
+        "a_count": "1.0",
+        "e_count": "1.0",
+        "i_count": "1.0",
         "o_count": "1.0",
         "u_count": "1.0454545454545454"
       }
@@ -410,15 +391,15 @@
     },
     "article_12": {
       "output_stats": {
-        "word_count": 991,
+        "word_count": 1022,
         "period_count": 50,
         "comma_count": 77,
-        "s_count": 336,
-        "a_count": 404,
-        "e_count": 625,
-        "i_count": 399,
-        "o_count": 343,
-        "u_count": 156
+        "s_count": 339,
+        "a_count": 411,
+        "e_count": 652,
+        "i_count": 402,
+        "o_count": 360,
+        "u_count": 162
       },
       "template_stats": {
         "word_count": 1010,
@@ -432,28 +413,28 @@
         "u_count": 159
       },
       "ratios": {
-        "word_count": "0.9811881188118812",
+        "word_count": "1.011881188118812",
         "period_count": "0.78125",
         "comma_count": "1.0",
-        "s_count": "1.0",
-        "a_count": "0.9853658536585366",
-        "e_count": "0.9600614439324117",
-        "i_count": "0.9950124688279302",
-        "o_count": "0.9527777777777777",
-        "u_count": "0.9811320754716981"
+        "s_count": "1.0089285714285714",
+        "a_count": "1.002439024390244",
+        "e_count": "1.001536098310292",
+        "i_count": "1.0024937655860349",
+        "o_count": "1.0",
+        "u_count": "1.0188679245283019"
       }
     },
     "article_13": {
       "output_stats": {
-        "word_count": 132,
+        "word_count": 136,
         "period_count": 4,
         "comma_count": 3,
-        "s_count": 32,
+        "s_count": 33,
         "a_count": 64,
         "e_count": 88,
         "i_count": 57,
         "o_count": 47,
-        "u_count": 23
+        "u_count": 24
       },
       "template_stats": {
         "word_count": 132,
@@ -467,15 +448,15 @@
         "u_count": 23
       },
       "ratios": {
-        "word_count": "1.0",
+        "word_count": "1.0303030303030303",
         "period_count": "1.0",
         "comma_count": "1.0",
-        "s_count": "1.0",
+        "s_count": "1.03125",
         "a_count": "1.0",
         "e_count": "1.0",
         "i_count": "1.0",
         "o_count": "1.0",
-        "u_count": "1.0"
+        "u_count": "1.0434782608695652"
       }
     },
     "article_14": {
@@ -515,15 +496,15 @@
     },
     "article_15": {
       "output_stats": {
-        "word_count": 299,
-        "period_count": 15,
-        "comma_count": 5,
-        "s_count": 88,
-        "a_count": 113,
-        "e_count": 211,
-        "i_count": 85,
-        "o_count": 97,
-        "u_count": 35
+        "word_count": 85,
+        "period_count": 2,
+        "comma_count": 2,
+        "s_count": 27,
+        "a_count": 34,
+        "e_count": 56,
+        "i_count": 21,
+        "o_count": 22,
+        "u_count": 10
       },
       "template_stats": {
         "word_count": 80,
@@ -537,33 +518,33 @@
         "u_count": 9
       },
       "ratios": {
-        "word_count": "3.7375",
-        "period_count": "7.5",
-        "comma_count": "2.5",
-        "s_count": "3.3846153846153846",
-        "a_count": "3.323529411764706",
-        "e_count": "3.767857142857143",
-        "i_count": "4.0476190476190474",
-        "o_count": "4.409090909090909",
-        "u_count": "3.888888888888889"
+        "word_count": "1.0625",
+        "period_count": "1.0",
+        "comma_count": "1.0",
+        "s_count": "1.0384615384615385",
+        "a_count": "1.0",
+        "e_count": "1.0",
+        "i_count": "1.0",
+        "o_count": "1.0",
+        "u_count": "1.1111111111111112"
       }
     }
   },
   "paragraph_analysis": {
     "article_1": {
-      "output_paragraphs": 10,
+      "output_paragraphs": 5,
       "template_paragraphs": 5,
-      "ratio": "10/5"
+      "ratio": "5/5"
     },
     "article_2": {
-      "output_paragraphs": 10,
+      "output_paragraphs": 13,
       "template_paragraphs": 8,
-      "ratio": "10/8"
+      "ratio": "13/8"
     },
     "article_3": {
-      "output_paragraphs": 6,
+      "output_paragraphs": 8,
       "template_paragraphs": 7,
-      "ratio": "6/7"
+      "ratio": "8/7"
     },
     "article_4": {
       "output_paragraphs": 10,
@@ -576,14 +557,14 @@
       "ratio": "3/3"
     },
     "article_6": {
+      "output_paragraphs": 3,
+      "template_paragraphs": 3,
+      "ratio": "3/3"
+    },
+    "article_7": {
       "output_paragraphs": 5,
       "template_paragraphs": 3,
       "ratio": "5/3"
-    },
-    "article_7": {
-      "output_paragraphs": 6,
-      "template_paragraphs": 3,
-      "ratio": "6/3"
     },
     "article_8": {
       "output_paragraphs": 2,
@@ -611,9 +592,9 @@
       "ratio": "66/58"
     },
     "article_13": {
-      "output_paragraphs": 3,
+      "output_paragraphs": 5,
       "template_paragraphs": 3,
-      "ratio": "3/3"
+      "ratio": "5/3"
     },
     "article_14": {
       "output_paragraphs": 5,
@@ -621,34 +602,29 @@
       "ratio": "5/5"
     },
     "article_15": {
-      "output_paragraphs": 41,
+      "output_paragraphs": 20,
       "template_paragraphs": 17,
-      "ratio": "41/17"
+      "ratio": "20/17"
     },
     "preamble": {
-      "output_paragraphs": 7,
-      "template_paragraphs": 6,
-      "ratio": "7/6"
+      "output_paragraphs": 8,
+      "template_paragraphs": 8,
+      "ratio": "8/8"
     },
     "and": {
-      "output_paragraphs": 25,
-      "template_paragraphs": 5,
-      "ratio": "25/5"
+      "output_paragraphs": 6,
+      "template_paragraphs": 6,
+      "ratio": "6/6"
     },
     "between": {
       "output_paragraphs": 5,
-      "template_paragraphs": 4,
-      "ratio": "5/4"
+      "template_paragraphs": 5,
+      "ratio": "5/5"
     },
     "title": {
       "output_paragraphs": 1,
       "template_paragraphs": 1,
       "ratio": "1/1"
-    },
-    "furthermore": {
-      "output_paragraphs": 17,
-      "template_paragraphs": 0,
-      "ratio": "17/0 (N/A)"
     }
   },
   "warnings": [],

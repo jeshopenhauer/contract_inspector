@@ -43,16 +43,21 @@ Este proyecto proporciona una interfaz web para analizar y comparar contratos co
      start_server.bat
      ```
 
-2. Abra la aplicación:
-   - En Linux:
+2. Acceder a la aplicación:
+   
+   El servidor mostrará las URLs disponibles al iniciar. Hay dos formas de acceder:
+   
+   - **Acceso local** (solo desde el mismo equipo donde se ejecuta el servidor):
      ```
-     ./open_app.sh
+     http://localhost:5000
      ```
-   - En Windows:
+   
+   - **Acceso desde la red** (desde otros equipos en la misma red):
      ```
-     open_app.bat
+     http://IP-DEL-SERVIDOR:5000
      ```
-   - O abra manualmente en su navegador la URL: http://127.0.0.1:5000
+     Donde "IP-DEL-SERVIDOR" es la dirección IP que muestra el script al iniciar.
+     Por ejemplo: `http://192.168.1.138:5000`
 
 ### Uso de la aplicación
 
@@ -64,7 +69,7 @@ Este proyecto proporciona una interfaz web para analizar y comparar contratos co
 
 - **Si el indicador de conexión está en rojo**: El servidor no está en ejecución. Asegúrese de ejecutar el script de inicio del servidor.
 - **Si no se muestra el reporte**: Revise la consola del navegador (F12) para ver mensajes de error detallados.
-- **Errores CORS**: Asegúrese de acceder a la aplicación desde http://127.0.0.1:5000 y no desde Live Server o cualquier otro servidor.
+- **Errores CORS**: Asegúrese de acceder a la aplicación usando la URL proporcionada por el servidor y no desde Live Server o cualquier otro servidor.
 
 ## Estructura de archivos
 
@@ -81,4 +86,15 @@ Este proyecto proporciona una interfaz web para analizar y comparar contratos co
 
 ## Notas
 
-Para evitar problemas de CORS, siempre use la aplicación desde la URL que proporciona el servidor Flask (http://127.0.0.1:5000) y no desde servidores de desarrollo como Live Server de VS Code.
+Para evitar problemas de CORS, siempre use la aplicación desde la URL que proporciona el servidor Flask y no desde servidores de desarrollo como Live Server de VS Code.
+
+## Compartir con compañeros
+
+Para compartir esta aplicación con sus compañeros en la misma red:
+
+1. Ejecute el script de inicio del servidor (`start_server.bat` en Windows o `start_server_linux.py` en Linux)
+2. El script mostrará la dirección IP y puerto donde está disponible la aplicación (ejemplo: `http://192.168.1.138:5000`)
+3. Comparta esta dirección con sus compañeros
+4. Sus compañeros pueden acceder simplemente ingresando esa dirección en su navegador
+
+> **Nota:** Todos los usuarios deben estar conectados a la misma red (como la WLAN de la empresa) para que esto funcione.

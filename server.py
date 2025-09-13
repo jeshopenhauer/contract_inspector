@@ -185,7 +185,7 @@ def analyze_contract():
         print(f"[DEBUG] server.py: Formato solicitado: {format_type}")
         
         if format_type == 'html':
-            html_content = get_report_html(report)
+            html_content = get_report_html(report, output_dir)
             print(f"[INFO] server.py: Reporte HTML generado, longitud: {len(html_content)} caracteres")
             print(f"[DEBUG] server.py: Primeros 100 caracteres del HTML: {html_content[:100]}")
             

@@ -20,10 +20,12 @@ try:
     # Intenta primero importación absoluta (cuando se ejecuta directamente)
     from inspector_functions.pdf_to_txt_pdfminer import convert_pdf_to_text
     from inspector_functions.txt_to_txt_splitter import split_contract_text
+    from inspector_functions.txt_cleaner import standardize_page_breaks
 except ImportError:
     # Si falla, usa importación relativa (cuando se importa como módulo)
     from .pdf_to_txt_pdfminer import convert_pdf_to_text
     from .txt_to_txt_splitter import split_contract_text
+    from .txt_cleaner import standardize_page_breaks
 
 import inspector_functions.inspector_statistics as statistics
 import inspector_functions.inspector_thermodynamics as thermodynamics
@@ -44,7 +46,6 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
         "date": time.strftime("%Y-%m-%d %H:%M:%S"),
         "input_file": os.path.basename(input_pdf),
         "status": "processing",
-        "steps": [],
         "statistics": {},
         "paragraph_analysis": {},
         "warnings": [],
@@ -57,7 +58,6 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
         
         # Paso 1: Convertir PDF a texto
         print(f"[INFO] create_report: PASO 1 - Convirtiendo PDF a texto")
-        report["steps"].append({"step": "pdf_to_text", "status": "running"})
         output_txt = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output.txt")
         
         print(f"[DEBUG] create_report: La ruta del archivo de salida será {output_txt}")
@@ -73,7 +73,6 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
             print(f"[ERROR] create_report: {error_msg}")
             report["errors"].append(error_msg)
             report["status"] = "error"
-            report["steps"][-1]["status"] = "error"
             return report
             
         # Guardar el texto extraído
@@ -86,12 +85,10 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
             print(f"[ERROR] create_report: Error al guardar el texto: {str(e)}")
             report["errors"].append(f"Error al guardar el texto: {str(e)}")
             
-        report["steps"][-1]["status"] = "complete"
         print(f"[INFO] create_report: PASO 1 completado")
         
         # Paso 2: Dividir el texto en secciones
         print(f"[INFO] create_report: PASO 2 - Dividiendo texto en secciones")
-        report["steps"].append({"step": "split_text", "status": "running"})
         
         # Crear directorio de salida si no existe
         print(f"[DEBUG] create_report: Creando directorio de salida {output_dir} si no existe")
@@ -116,14 +113,22 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
             for section, path in (split_results.items() if isinstance(split_results, dict) else []):
                 print(f"[DEBUG] create_report:   - {section}: {path}")
                 
-            report["steps"][-1]["status"] = "complete"
-            report["steps"][-1]["files_created"] = num_files
+            # Aplicar limpieza a cada archivo generado
+            print(f"[INFO] create_report: Aplicando limpieza a los archivos generados")
+            for section, path in (split_results.items() if isinstance(split_results, dict) else []):
+                try:
+                    # Limpiar y guardar con el mismo nombre para mantener la estructura
+                    print(f"[DEBUG] create_report: Limpiando archivo {path}")
+                    standardize_page_breaks(path, path)
+                    print(f"[DEBUG] create_report: Archivo {path} limpiado correctamente")
+                except Exception as e:
+                    print(f"[WARNING] create_report: Error al limpiar archivo {path}: {str(e)}")
+                    # Continuamos con el siguiente archivo si hay error en uno
         except Exception as e:
             import traceback
             error_msg = f"Error al dividir el texto: {str(e)}"
             print(f"[ERROR] create_report: {error_msg}")
             print(f"[DEBUG] {traceback.format_exc()}")
-            report["steps"][-1]["status"] = "error"
             report["errors"].append(error_msg)
             report["status"] = "error"
             return report
@@ -131,7 +136,6 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
         print(f"[INFO] create_report: PASO 2 completado")
         
         # Paso 3: Analizar estadísticas
-        report["steps"].append({"step": "statistics_analysis", "status": "running"})
         
         try:
             # Obtener la ruta al directorio de plantillas
@@ -150,14 +154,11 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
                     }
             
             report["statistics"] = stats_results
-            report["steps"][-1]["status"] = "complete"
             
         except Exception as e:
-            report["steps"][-1]["status"] = "warning"
             report["warnings"].append(f"Error al analizar estadísticas: {str(e)}")
         
         # Paso 4: Analizar párrafos
-        report["steps"].append({"step": "paragraph_analysis", "status": "running"})
         
         try:
             # Analizar párrafos
@@ -176,10 +177,8 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
                     formatted_para_results[section] = {'error': data['error']}
             
             report["paragraph_analysis"] = formatted_para_results
-            report["steps"][-1]["status"] = "complete"
             
         except Exception as e:
-            report["steps"][-1]["status"] = "warning"
             report["warnings"].append(f"Error al analizar párrafos: {str(e)}")
         
         # Finalizar reporte
@@ -198,12 +197,13 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
         return report
 
 
-def get_report_html(report):
+def get_report_html(report, output_dir="output_split"):
     """
     Convierte el reporte en formato HTML para mostrarlo en la página web.
     
     Args:
         report (dict): El reporte generado por create_report()
+        output_dir (str): Directorio donde se encuentran los archivos divididos
         
     Returns:
         str: HTML formateado del reporte
@@ -218,15 +218,7 @@ def get_report_html(report):
     html.append(f'<p class="status-{report["status"]}">Estado: {report["status"].upper()}</p>')
     html.append('</div>')
     
-    # Resumen de pasos
-    html.append('<div class="report-steps">')
-    html.append('<h3>Pasos realizados:</h3>')
-    html.append('<ul>')
-    for step in report["steps"]:
-        status_class = step["status"]
-        html.append(f'<li class="step-{status_class}">{step["step"]}: {step["status"].upper()}</li>')
-    html.append('</ul>')
-    html.append('</div>')
+    # Quitar el resumen de pasos (simplificación solicitada)
     
     # Si hay errores, mostrarlos
     if report["errors"]:
@@ -248,80 +240,31 @@ def get_report_html(report):
         html.append('</ul>')
         html.append('</div>')
     
-    # Análisis de párrafos
-    if report["paragraph_analysis"]:
-        html.append('<div class="report-paragraphs">')
-        html.append('<h3>Análisis de Párrafos por Sección</h3>')
+    # Análisis combinado (estadísticas y párrafos)
+    if report["statistics"] and report["paragraph_analysis"]:
+        html.append('<div class="report-combined-analysis">')
+        html.append('<h3>Análisis Completo por Sección</h3>')
         
         # Crear tabla en formato ASCII usando tabulate
         from tabulate import tabulate
         
-        # Preparar datos para la tabla
+        # Preparar datos para la tabla combinada
         table_data = []
-        headers = ['Sección', 'Párrafos (Contrato)', 'Párrafos (Plantilla)', 'Relación']
+        headers = ['Art.', 'palabras', 'puntos.', 'comas.', 's', 'a', 'e', 'i', 'o', 'u', 
+                   'Párrafos (Contrato)', 'Párrafos (Plantilla)', 'Relación']
         
-        # Orden específico de secciones
-        section_order = ['title', 'between', 'and', 'preamble']
-        for i in range(1, 16):
-            section_order.append(f'article_{i}')
-        section_order.append('furthermore')
-        
-        # Preparar filas de datos para tabulate
-        for section in section_order:
-            if section in report["paragraph_analysis"]:
-                data = report["paragraph_analysis"][section]
-                if 'error' not in data:
-                    output_count = data['output_paragraphs']
-                    template_count = data['template_paragraphs']
-                    ratio = data['ratio']
-                    table_data.append([section, output_count, template_count, ratio])
-                else:
-                    table_data.append([section, f"ERROR: {data['error']}", "", ""])
-        
-        # Mostrar secciones adicionales que no estén en el orden predefinido
-        for section, data in report["paragraph_analysis"].items():
-            if section not in section_order:
-                if 'error' not in data:
-                    output_count = data['output_paragraphs']
-                    template_count = data['template_paragraphs']
-                    ratio = data['ratio']
-                    table_data.append([section, output_count, template_count, ratio])
-                else:
-                    table_data.append([section, f"ERROR: {data['error']}", "", ""])
-        
-        # Generar tabla ASCII
-        ascii_table = tabulate(table_data, headers=headers, tablefmt="grid")
-        
-        # Añadir la tabla ASCII al HTML como texto preformateado
-        html.append('<pre class="ascii-table">')
-        html.append(ascii_table)
-        html.append('</pre>')
-        
-        html.append('</div>')
-    
-    # Análisis estadístico (resumido)
-    if report["statistics"]:
-        html.append('<div class="report-statistics">')
-        html.append('<h3>Análisis Estadístico por Sección</h3>')
-        
-        # Crear tabla en formato ASCII usando tabulate
-        from tabulate import tabulate
-        
-        # Preparar datos para la tabla
-        table_data = []
-        headers = ['Art.', 'palabras', 'puntos.', 'comas.', 's', 'a', 'e', 'i', 'o', 'u']
-        
-        # Secciones en orden
+        # Solo incluir los artículos (1-15), omitir title, between, and
         for i in range(1, 16):
             article_key = f'article_{i}'
+            row = [i]
+            
+            # Añadir estadísticas
             if article_key in report["statistics"]:
                 data = report["statistics"][article_key]
                 if 'ratios' in data:
-                    ratios = data['ratios']
                     output_stats = data['output_stats']
                     template_stats = data['template_stats']
                     
-                    row = [i]
                     for key in ['word_count', 'period_count', 'comma_count', 's_count', 
                                'a_count', 'e_count', 'i_count', 'o_count', 'u_count']:
                         # Formato como fracción output/template
@@ -332,11 +275,25 @@ def get_report_html(report):
                                 row.append('1')
                         else:
                             row.append(f"{output_stats[key]}/{template_stats[key]}")
-                    
-                    table_data.append(row)
                 else:
-                    row = [i] + ['ERROR'] * 9
-                    table_data.append(row)
+                    row.extend(['ERROR'] * 9)
+            else:
+                row.extend(['-'] * 9)
+            
+            # Añadir análisis de párrafos
+            if article_key in report["paragraph_analysis"]:
+                data = report["paragraph_analysis"][article_key]
+                if 'error' not in data:
+                    output_count = data['output_paragraphs']
+                    template_count = data['template_paragraphs']
+                    ratio = data['ratio']
+                    row.extend([output_count, template_count, ratio])
+                else:
+                    row.extend([f"ERROR", "-", "-"])
+            else:
+                row.extend(['-', '-', '-'])
+            
+            table_data.append(row)
         
         # Generar tabla ASCII
         ascii_table = tabulate(table_data, headers=headers, tablefmt="grid")
@@ -345,6 +302,55 @@ def get_report_html(report):
         html.append('<pre class="ascii-table">')
         html.append(ascii_table)
         html.append('</pre>')
+        
+        html.append('</div>')
+        
+        # Añadir sección de comparación visual con desplegables
+        html.append('<div class="visual-comparison">')
+        html.append('<h3>Comparación Visual de Artículos</h3>')
+        
+        # Obtener la ruta al directorio de plantillas
+        base_dir = Path(__file__).parent.parent
+        template_dir = os.path.join(base_dir, "template")
+        
+        # Crear desplegables para cada artículo, alternando contrato y plantilla
+        for i in range(1, 16):
+            article_key = f'article_{i}'
+            
+            # Ruta al archivo de salida del artículo
+            output_article_path = os.path.join(output_dir, f'output_{article_key}.txt')
+            # Ruta al archivo de plantilla del artículo
+            template_article_path = os.path.join(template_dir, f'template_{article_key}.txt')
+            
+            # Verificar si existen los archivos
+            if os.path.exists(output_article_path):
+                # Añadir desplegable para el artículo del contrato
+                html.append(f'<details class="article-comparison">')
+                html.append(f'<summary>output_{article_key} ▽</summary>')
+                try:
+                    with open(output_article_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                        html.append('<pre class="article-content">')
+                        html.append(content)
+                        html.append('</pre>')
+                except Exception as e:
+                    html.append(f'<p class="error">Error al leer el archivo: {str(e)}</p>')
+                html.append('</details>')
+            
+            # Verificar si existe el archivo de plantilla
+            if os.path.exists(template_article_path):
+                # Añadir desplegable para el artículo de la plantilla
+                html.append(f'<details class="template-comparison">')
+                html.append(f'<summary>template_{article_key} ▽</summary>')
+                try:
+                    with open(template_article_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                        html.append('<pre class="template-content">')
+                        html.append(content)
+                        html.append('</pre>')
+                except Exception as e:
+                    html.append(f'<p class="error">Error al leer el archivo: {str(e)}</p>')
+                html.append('</details>')
         
         html.append('</div>')
     
@@ -373,3 +379,7 @@ if __name__ == "__main__":
         print("Reporte generado con éxito")
     else:
         print(f"Error al generar reporte: {report['errors']}")
+
+
+
+

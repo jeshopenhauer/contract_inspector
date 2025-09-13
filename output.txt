@@ -1,14 +1,12 @@
-FRAMEWORK CONFIDENTIALITY AGREEMENT
+CONFIDENTIALITY AGREEMENT
 
 Between:
 
-VALEO ESPAÑA S.A.U., a company organized and existing under the laws of Spain, the
-registered office of which is Calle Linares Nº 15, Martos (Jaén), registered under the CIF
-number A-08085235 in general book number 293, chapter 7309, page 37238 at the Trade and
-Companies Registry of Jaén.
+[Exact name of Valeo legal entity], a [specify legal entity] company organized and existing 
+under the laws of [Country], the registered office of which is [address], registered under the 
+number [number] at the Trade and Companies Registry of [City],
 
-Represented by Mr. Francisco José Morcillo Paredes acting as Electronic Project Buyer, duly
-authorized,
+Represented by Mr./Ms. [First name, Last name] acting as [position], duly authorized,
 
 Hereinafter referred to as “Valeo”,
 
@@ -16,144 +14,106 @@ On the one hand
 
 And:
 
-Chin Poon
+[Exact name of the legal entity], a [specify legal entity] company organized and existing under 
+the laws of [Country], the registered office of which is [address], registered under the number 
+[number] at the Trade and Companies Registry of [City],
 
-, a
-
-China
-
-under the laws of
-number
-
-China
-
-, the registered office of which is
-
-at the Trade and Companies Registry of
-
-company organized and existing
-, registered under the
-
-,
-
-Sales section manager
-
-Represented by Mr./Ms.
-
-Mandy Zhao
-
-acting as
-
-, duly authorized,
+Represented by Mr./Ms. [First name, Last name] acting as [position], duly authorized,
 
 Hereinafter referred to as “Partner”,
 
 On the other hand
 
-Also referred to as “Party” or “Parties” or “Disclosing Party” or “Receiving Party”, as the
-case may be. An Affiliate (as defined below) may also be a “Disclosing Party” or a
-“Receiving Party”.
+Also referred to as “Party” or “Parties” or “Disclosing Party” or “Receiving Party”, as the case 
+may be. An Affiliate (as defined below) may also be a “Disclosing Party” or a “Receiving 
+Party”.
 
 Preamble
 
-Valeo is part of the Valeo Group of companies and with its Affiliates, designs and
-manufactures lighting systems, related components and possesses intellectual property rights
-and know-how relating thereto
-Partner
+Valeo is part of the Valeo Group of companies and with its Affiliates, designs and manufactures 
+[products] and possesses intellectual property rights and know-how relating thereto.
 
-The Parties wish from time to time to examine and investigate the opportunity to work
-together on automotive projects combining the respective crafts, skills and competencies of
-each Party (the “Purpose”). The Purpose of each project will be further defined in each
-Supplement.
+Partner [activity of Partner]
 
-In order to pursue the Purpose, each Party may, directly or through its Affiliates, need to
-provide to the other Party, directly or through its Affiliates, with certain information which is
-confidential, proprietary and otherwise not generally available to the public.
+The Parties wish, directly or through their respective Affiliates, to investigate the possibility of 
+working together on [description of the project] (the “Purpose”).
+
+In order to pursue the Purpose, a Party and/or its Affiliates may provide to the other Party and/or 
+its Affiliates with certain information which is confidential, proprietary and otherwise not 
+generally available to the public.
+
+Therefore,   the   Parties   wish   to   enter   into   this   confidentiality   agreement   (hereinafter   the 
+“Agreement”)   in   accordance   with   which   they   agree   to   keep   confidential   any   information 
+communicated by a Party and/or its Affiliates in relation to the Purpose.
 
 1
 
-FA SEP 2021
+S JUL 25
 
-Therefore, the Parties have decided to enter into the present framework confidentiality
-agreement, which shall govern the disclosure and/or exchange of information pursuant to the
-signature of a Supplement for each project referring to the present framework confidentiality
-agreement (hereinafter the “Agreement”).
+Article 1: Definitions
 
-Article 1: Definitions
+1.1 “Confidential Information” means any information, knowledge or data of any nature 
+whatsoever   (including   but   not   limited   to   financial,   industrial,   technical   and   commercial 
+information),   in   whatever   form   (including   but   not   limited   to   drawings,   diagrams,   graphs, 
+descriptions,   specifications,   software,   manuals,   formulae,   prototypes,   samples,   products), 
+whether protected or not by any intellectual or industrial property right, which is disclosed by a 
+Party (the “Disclosing Party”), on whatever media (including but not limited to orally, in 
+writing, magnetic or electronic means, telecommunications or computer processes) or whatever 
+means (including but not limited to site visits and product demonstrations) to the other Party  
+(the “Receiving Party”). Confidential Information can include but is not limited to (a) the 
+existence   and   objectives   of   the   Purpose,   (b)   the   terms   of   this   Agreement,   and   (c)   any 
+information that the Receiving Party may have derived from the Confidential Information as a 
+result of its examination thereof, for example but not limited to laboratory test results, analytical 
+notes, benchmarking conclusions and the like.
 
-1.1 “Confidential Information” means any information, knowledge or data of any nature
-whatsoever (including but not limited to financial, industrial, technical and commercial
-information), in whatever form (including but not limited to drawings, diagrams, graphs,
-descriptions, specifications, software, manuals, formulae, prototypes, samples, products),
-whether protected or not by any intellectual or industrial property right, which is disclosed by
-a Party (the “Disclosing Party”), on whatever media (including but not limited to orally, in
-writing, magnetic or electronic means, telecommunications or computer processes) or
-whatever means (including but not limited to site visits and product demonstrations) to the
-other Party (the “Receiving Party”). Confidential Information can include but is not limited to
-(a) the existence and objectives of the Purpose, (b) the terms of this Agreement, and (c) any
-information that the Receiving Party may have derived from the Confidential Information as a
-result of its examination thereof, for example but not limited to laboratory test results,
-analytical notes, benchmarking conclusions and the like.
+1.2 “Affiliate(s)” means any legal entity directly or indirectly owned or controlled by or 
+owning or controlling or under the same ownership or control as a Party and which is not a direct 
+or indirect competitor of the Parties. Such ownership or control must exist through the direct or 
+indirect ownership of more than 50% of the voting rights or by the ownership of any other 
+nominal value of the issued equity share capital or ownership of more than 50% of the shares 
+entitling the holders to vote for the election of directors or persons performing similar functions 
+or the right by any other means to elect or appoint directors or persons performing similar 
+functions who have a majority vote. Legal entities belonging to the same group as a Party and 
+which carry out an activity which competes with that of the other Party are excluded from this 
+definition.
 
-1.2 “Affiliate(s)” means any legal entity directly or indirectly owned or controlled by or
-owning or controlling or under the same ownership or control as a Party and which is not a
-direct or indirect competitor of the Parties. Such ownership or control must exist through the
-direct or indirect ownership of more than 50% of the voting rights or by the ownership of any
-other nominal value of the issued equity share capital or ownership of more than 50% of the
-shares entitling the holders to vote for the election of directors or persons performing similar
-functions or the right by any other means to elect or appoint directors or persons performing
-similar functions who have a majority vote. Legal entities belonging to the same group as a
-Party and which carry out an activity which competes with that of the other Party are
-excluded from this definition.
+1.3 “Effective Date” means the date on which this Agreement is signed by the last of the two 
+Parties.
 
-1.3 “Effective Date” means the date on which a Supplement is signed by the last of the
-two Parties.
+1.4 “Notice” means a registered letter with return receipt requested or an overnight carrier 
+such as DHL or FedEx. 
 
-1.4 “Notice” means a registered letter with return receipt requested or an overnight carrier
-such as DHL or FedEx.
+Article 2: Exclusions
 
-1.5 “Supplement” means a supplement to the present Agreement, a form of which is
-attached in Appendix 1, entered into between the Parties for a specific project, which will
-notably provide the details of (the list being not exhaustive):
-
-- the Purpose,
-- the Effective Date of the Supplement, and
-- the duration of the Supplement.
-
-The Supplement will be established and signed prior to the exchange of Confidential
-Information.
-
-2
-
-FA SEP 2021
-
-Article 2: Exclusions
-
-The obligations of confidentiality under this Agreement shall not apply to Confidential
+The   obligations   of   confidentiality   under   this   Agreement   shall   not   apply   to   Confidential 
 Information that:
 
-a) was, as of the Effective Date, or has subsequently become, publicly known through no
+a) was, as of the Effective Date, or has subsequently become, publicly known through no 
 wrongful act of the Receiving Party;
 
-b) has been disclosed by a third party (other than a duly authorized third party under
-Article 3 hereof) without restriction, unless the Receiving Party knew or ought to have known
-under the circumstances, that the information had been obtained directly or indirectly from the
-Disclosing Party and that the disclosure of the information was made unlawfully;
+b) has been disclosed by a third party (other than a duly authorized third party under Article 
+3 hereof) without restriction, unless the Receiving Party knew or ought to have known under the 
+circumstances, that the information had been obtained directly or indirectly from the Disclosing 
+Party and that the disclosure of the information was made unlawfully;
 
-that was already in the possession of the Receiving Party prior to the date of disclosure
+that was already in the possession of the Receiving Party prior to the date of disclosure 
 
 c)
 and is not subject to an obligation of confidentiality;
 
-d) which is disclosed by a Party to its Affiliate(s) so long as the Affiliates respect the
-same confidentiality obligations as those contained herein. The Party so disclosing the
-Confidential Information to its Affiliate(s) shall remain liable for the actions or omissions of
-its Affiliate(s);
+2
 
-the disclosure of which is authorized by the Disclosing Party in writing in advance of
+S JUL 25
+
+is subsequently independently developed by the Receiving Party without access to the 
+
+d)
+Confidential Information;
+
+the disclosure of which is authorized by the Disclosing Party in writing in advance of the 
 
 e)
-the disclosure.
+disclosure.
 
 A Party which relies on one of the foregoing exclusions carries the burden of proving it.
 
@@ -162,40 +122,54 @@ Article 3: Preservation and Restricted Use of Confidential Information
 All Confidential Information:
 
 a)
-shall be safely and securely kept and stored by the Receiving Party. The Receiving
-Party shall protect the Confidential Information with the same degree of care as the Receiving
-Party uses with its own Confidential Information (but in no event with less than reasonable
-care) in order to prevent the express, inadvertent or accidental disclosure of the Confidential
-Information and shall limit the reproduction and disclosure of such Confidential Information
-to its employees or directors to a strict need-to-know basis.
+shall be safely and securely kept and stored by the Receiving Party. The Receiving Party 
+shall protect the Confidential Information with the same degree of care as the Receiving Party 
+uses with its own Confidential Information (but in no event with less than reasonable care) in 
+order   to   prevent   the   express,   inadvertent   or   accidental   disclosure   of   the   Confidential 
+Information and shall limit the reproduction and disclosure of such Confidential Information to 
+its employees or directors to a strict need-to-know basis.
 
 b)
-shall not be disclosed to third Parties without the express written prior authorization of
-the Disclosing Party. If the Confidential Information is requested by a public authority as
-required by an applicable law or regulation (to the extent permitted by such laws or
-regulations), the Receiving Party shall give prompt Notice of such request to the Disclosing
-Party (including by e-mail, the receipt of which is acknowledged) in order to permit the
-Disclosing Party to seek an appropriate limitation or remedy prior to such disclosure.
+shall only be disclosed  to the Receiving Party’s employees on a strict need-to-know 
+basis. The Receiving Party shall ensure that such employees are bound by confidentiality 
+undertakings at least as restrictive as those contained in this Agreement. The Receiving Party  
+shall remain responsible for compliance with this Agreement by its Affiliates.
 
 c)
+shall not be disclosed to third parties without the express written prior authorization of 
+the Disclosing Party. In the exceptional case when the Disclosing Party does authorize such 
+disclosure,   the   Receiving   Party   wishing   to   so   disclose   to   the   third   party   shall   execute   a 
+confidentiality agreement with the same or substantially the same terms as those provided in 
+this Agreement and that Receiving Party shall remain liable for any disclosure by the third party. 
+If the Confidential Information is requested by a public authority as required by an applicable 
+law or regulation (to the extent permitted by such laws or regulations), the Receiving Party shall 
+give prompt Notice of such request to the Disclosing Party (including by e-mail, the receipt of 
+which is acknowledged) in order to permit the Disclosing Party to seek an appropriate limitation 
+or remedy prior to such disclosure.
+
+d)
 
 shall only be used by the Receiving Party in direct relation with the Purpose.
 
+If software or samples or prototypes are provided hereunder, the Receiving Party shall not 
+reserve   engineer,   including   but   not   limited   to   disassembling   and   decompiling,   any   such 
+software or samples or prototypes.
+
 Article 4: Restrictions
+
+The provisions of this Agreement shall not be construed as implying an obligation of either 
+Party:
 
 3
 
-FA SEP 2021
+S JUL 25
 
-The provisions of this Agreement shall not be construed as implying an obligation of either
-Party:
-
-to provide any Confidential Information to the other Party, whether at its own
+to provide any Confidential Information to the other Party, whether at its own initiative 
 
 a)
-initiative or at the request of the other Party;
+or at the request of the other Party;
 
-to enter into any further contract with the other Party in relation with the Purpose or
+to enter into any further contract with the other Party in relation with the Purpose or 
 
 b)
 otherwise;
@@ -204,74 +178,64 @@ c)
 
 to propose or to purchase products to/from third parties.
 
-Article 5: Ownership of the Confidential Information/No license
+Article 5: Ownership of the Confidential Information/Results
 
-5.1 Any and all rights, title and interest in the Confidential Information of a Party shall
-remain its exclusive property. Nothing in this Agreement shall be construed as conferring or
-granting to the Receiving Party any intellectual or industrial property right, license, or right to
-use whatsoever the Confidential Information, either express or implied, other than for the use
+5.1 Any and all rights, title and interest in the Confidential Information of a Party shall 
+remain its exclusive property. Nothing in this Agreement shall be construed as conferring or 
+granting to the Receiving Party any intellectual or industrial property right, license, or right to 
+use whatsoever the Confidential Information, either express or implied, other than for the use 
 provided hereunder in relation to the Purpose.
 
-5.2 Although the purpose of the present Agreement is only to examine and investigate, on
-a case-by-case basis, the opportunity to work together on automotive projects, in the
-exceptional event that such examination and investigation leads to the creation of particular
-results, whether or not they are protected through an intellectual property right, the
-Supplement will define the attribution of ownership and exploitation rights to such results.
+5.2 The results generated in relation to the Purpose shall be the sole property of Valeo who 
+has the sole right to use them and/or to proceed, at its sole discretion, with the registration of any 
+patent or other intellectual property rights relating thereto.
 
-Article 6: Effective Date/Duration/Termination
+Article 6: Effective Date/Duration
 
-6.1 This Agreement shall enter into force as of the date of signature of the last signing
-Party and shall remain in force for an unlimited period.
+6.1 This Agreement shall enter into force as of the Effective Date and shall expire ten (10)  
+years from the Effective Date.
 
-6.2 Each Supplement is entered into for a determined period as specified in such
-Supplement, and shall remain in full force and effect for such period.
-
-6.3 In case of termination of the present Agreement, any Supplement between the Parties
-shall continue until the end of the duration provided in the Supplement, unless otherwise
-agreed by the Parties.
-
-6.4 The Receiving Party’s obligations contained in this Agreement to keep confidential
-and restrict the use of the Disclosing Party’s Confidential Information shall survive for a
-period of five (5) years from the date of expiration of the Supplement.
+6.2 The Receiving Party’s obligations contained in this Agreement to keep confidential and 
+restrict the use of the Disclosing Party’s Confidential Information shall survive for a period of 
+five (5) years from the date of expiration hereof.
 
 Article 7: Return of Confidential Information
 
-7.1 At any time and, at the latest, following the expiration of each Supplement, the
-Receiving Party shall, if required by the Disclosing Party, return the Confidential Information
-and authorized copies within fifteen (15) calendar days and/or delete such from all computer
-files. If agreed by the Disclosing Party, the Confidential Information and authorized copies
+7.1 At any time and, at the latest, following the expiration of this Agreement, the Receiving 
+Party   shall,   if   required   by   the   Disclosing   Party,   return   the   Confidential   Information   and 
+authorized copies within fifteen (15) calendar days and/or delete such from all computer files. If 
+agreed by the Disclosing Party, the Confidential Information and authorized copies thereof may 
+also be destroyed by the Receiving Party. The Receiving Party shall provide a prompt written 
+Notice to such effect.
+
+7.2 Notwithstanding   the   foregoing   paragraph,   the   Receiving   Party   may   retain   archival 
+copies in a secured, limited access file, in accordance with its standard record keeping processes 
+exclusively for maintaining a legal record of the Confidential Information provided under this 
+Agreement and to ensure proof of compliance with the obligations under this Agreement or 
+resolving disputes arising in connection with this Agreement. Furthermore, copies which have 
+been made through regular automatic computer back-up processes do not need be returned or 
+deleted. The above copies remain subject to the obligations of confidentiality in accordance 
+with the terms set forth herein.
 
 4
 
-FA SEP 2021
+S JUL 25
 
-thereof may also be destroyed by the Receiving Party. The Receiving Party shall provide a
-prompt written Notice to such effect.
+Article 8: Personal Data
 
-7.2 Notwithstanding the foregoing paragraph, the Receiving Party may retain archival
-copies in a secured, limited access file, in accordance with its standard record keeping
-processes exclusively for maintaining a legal record of the Confidential Information provided
-under this Agreement and to ensure proof of compliance with the obligations under this
-Agreement or resolving disputes arising in connection with this Agreement. Furthermore,
-copies which have been made through regular automatic computer back-up processes do not
-need be returned or deleted. The above copies remain subject to the obligations of
-confidentiality in accordance with the terms set forth herein.
-
-Article 8: Personal Data
-
-The Parties shall minimize the disclosure of Personal Data as defined in the General Data
-Protection Regulation (Regulation (EU) 2016/679) or in any applicable law or regulation as
-part of the Confidential Information (hereinafter referred to as “Personal Data”). If it is
-necessary for a Party to exchange Confidential Information which contains Personal Data to
-the other Party in relation to the Purpose, such Personal Data will be considered to be
-Confidential Information under this Agreement and will be processed by the Receiving Party
-acting as “data controller” in compliance with applicable data protection laws and regulations.
-There will be no disclosure of Personal Data to third parties under any circumstances.
+The Parties shall minimize the disclosure of Personal Data as defined in the General Data  
+Protection Regulation (Regulation (EU) 2016/679) or in any applicable law or regulation as part 
+of the Confidential Information (hereinafter referred to as “Personal Data”). If it is necessary for 
+a Party to exchange Confidential Information which contains Personal Data to the other Party in 
+relation to the Purpose, such Personal Data will be considered to be Confidential Information 
+under this Agreement and will be processed by the Receiving Party acting as “data controller” in 
+compliance with applicable data protection laws and regulations. There will be no disclosure of 
+Personal Data to third parties under any circumstances.
 
 Article 9: Assignment
 
-This Agreement shall not be assigned or transferred to any third party without the prior
-written approval of the other Party.
+This Agreement shall not be assigned or transferred to any third party without the prior written 
+approval of the other Party.
 
 Article 10: Modification
 
@@ -279,318 +243,270 @@ This Agreement may not be modified except by a written document signed by the Pa
 
 Article 11: Severability
 
-In the event any provision of this Agreement is found to be void and unenforceable, the
+In the event any provision of this Agreement is found to be void and unenforceable, the 
 remaining provisions shall remain in full force and effect.
 
 Article 12: Applicable Law/Jurisdiction
 
+[Please only keep the relevant section below – depending on the location of the Partner – and 
+delete the rest of the table]
+
 a) If Valeo and the Partner are based in the same country:
 
-The law of Spain, excluding any rules of conflict of laws, shall govern this Agreement.
+The law of [country where both Valeo and the Partner are based], excluding any rules of 
+conflict of laws, shall govern this Agreement.
+
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
+excluded.
+
+The competent court of [capital city of the above-mentioned country] shall have exclusive 
+jurisdiction over any disputes arising hereunder.
+
+b) If the Partner is based in any member state country of the European Union, the 
+European Economic Area, the Lugano Conventions, Austria, Belgium, Bulgaria, 
+Croatia,   Republic   of   Cyprus,  Czech   Republic,   Denmark,   Estonia,  Finland, 
+France,   Germany,   Greece,   Hungary,   Iceland,   Ireland,   Italy,   Latvia, 
 
 5
 
-FA SEP 2021
+S JUL 25
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
-excluded.
-
-The competent court of Madrid shall have exclusive jurisdiction over any disputes arising
-hereunder.
-
-b) If the Partner is based in any member state country of the European Union, the
-European Economic Area, the Lugano Conventions, Austria, Belgium,
-Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia,
-Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia,
-Lichtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland,
+Lichtenstein,   Lithuania,   Luxembourg,   Malta,   Netherlands,   Norway,   Poland, 
 Portugal, Romania, Slovakia, Slovenia, Spain, Sweden or Switzerland:
 
 French law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The Tribunal de Commerce of Paris, France shall have exclusive jurisdiction over any
-disputes arising hereunder.
+The competent courts of Paris, France shall have exclusive jurisdiction over any disputes 
+arising hereunder.
 
 c) If the Partner is based in the United States:
 
-The laws of the State of Michigan, excluding any rules of conflict of laws, shall govern this
+The laws of the State of Michigan, excluding any rules of conflict of laws, shall govern this 
 Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-Valeo and Partner agree that any and all disputes between them will be resolved by, and they
-each consent to, the exclusive jurisdiction and venue of the Oakland County, Michigan
-Circuit Court and the United States District Court for the Eastern District of Michigan,
-Southern Division to resolve any such disputes, including for lawsuits seeking monetary
+Valeo and Partner agree that any and all disputes between them will be resolved by, and they 
+each consent to, the exclusive jurisdiction and venue of the Oakland County, Michigan 
+Circuit Court and the United States District Court for the Eastern District of Michigan, 
+Southern Division to resolve any such disputes, including for lawsuits seeking monetary 
 relief.
 
 d) If the Partner is based in China:
 
 Chinese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The China International Economic and Trade Arbitration Commission (CIETAC) – Beijing
-Bureau will finally settle any disputes arising hereunder. The place of arbitration shall be
-Beijing. The arbitral tribunal shall consist of three (3) arbitrators. Each Party shall appoint
-one (1) arbitrator and those two (2) arbitrators shall choose the chairperson from a list of
-four (4) candidates – two (2) candidates submitted per Party. The chairperson shall not be or
-ever have been a national of France or China. The arbitration shall be conducted in English
-
-6
-
-FA SEP 2021
-
-and all documents shall be in English. Each Party shall be responsible for half of the costs
-and fees of the arbitration. The arbitral award shall be final and binding on the Parties.
+The China International Economic and Trade Arbitration Commission (CIETAC) – Beijing 
+Bureau will finally settle any disputes arising hereunder. The place of arbitration shall be 
+Beijing. The arbitral tribunal shall consist of three (3) arbitrators. Each Party shall appoint one 
+(1) arbitrator and those two (2) arbitrators shall choose the chairperson from a list of four (4) 
+candidates – two (2) candidates submitted per Party. The chairperson shall not be or ever have 
+been a national of France or China. The arbitration shall be conducted in English and all  
+documents shall be in English. Each Party shall be responsible for half of the costs and fees of 
+the arbitration. The arbitral award shall be final and binding on the Parties.
 
 e) If the Partner is based in the UK:
 
-The law of England and Wales, excluding any rules of conflict of laws, shall govern this
+The law of England and Wales, excluding any rules of conflict of laws, shall govern this 
 Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The competent courts of London, England shall have exclusive jurisdiction over any
-disputes arising hereunder.
+The competent courts of London, England shall have exclusive jurisdiction over any disputes 
+
+6
+
+S JUL 25
+
+arising hereunder.
 
 f) If the Partner is based in Mexico:
 
-Mexican law, Federal District, excluding any rules of conflict of laws, shall govern this
+Mexican law, Federal District, excluding any rules of conflict of laws,  shall govern this 
 Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The Courts of Mexico, Federal District, shall have exclusive jurisdiction over any disputes
+The Courts of Mexico, Federal District, shall have exclusive jurisdiction over any disputes 
 arising hereunder.
 
 g) If the Partner is based in Brazil:
 
 Brazilian law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The competent courts of Sao Paulo, State of Sao Paulo, Brazil shall have exclusive
+The   competent   courts   of   Sao   Paulo,   State   of   Sao   Paulo,   Brazil   shall   have   exclusive 
 jurisdiction over any disputes arising hereunder.
 
 h) If the Partner is based in India:
 
 Indian law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The competent courts of New Delhi, India shall have exclusive jurisdiction over any
-disputes arising hereunder.
+The competent courts of New Delhi, India shall have exclusive jurisdiction over any disputes 
+arising hereunder.
 
 i) If the Partner is based in Japan:
 
 Japanese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-7
-
-FA SEP 2021
-
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The District of Tokyo shall have exclusive jurisdiction over any disputes arising hereunder.
+The District Court of Tokyo shall have exclusive jurisdiction over any disputes arising 
+hereunder.
 
 j) If the Partner is based in Korea:
 
 Korean law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The District of Seoul, Korea shall have exclusive jurisdiction over any disputes arising
+7
+
+S JUL 25
+
+The District of Seoul, Korea shall have exclusive jurisdiction over any disputes arising 
 hereunder.
 
 k) If the Partner is based in Turkey:
 
 Turkish law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The competent courts of Istanbul, Turkey shall have exclusive jurisdiction over any disputes
-arising hereunder.
+The competent courts of Istanbul, Turkey shall have exclusive jurisdiction over any 
+disputes arising hereunder.
 
 l) If the Partner is based in Vietnam:
 
 Vietnamese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The competent courts of Saigon, Vietnam shall have exclusive jurisdiction over any disputes
+The competent courts of Saigon, Vietnam shall have exclusive jurisdiction over any disputes 
 arising hereunder.
 
 m) If the Partner is based in Thailand:
 
 Thai law, excluding any rules of conflict of laws, shall govern this Agreement.
 
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The competent courts of Bangkok, Thailand shall have exclusive jurisdiction over any
+The   competent   courts   of   Bangkok,   Thailand   shall   have   exclusive   jurisdiction   over   any 
 disputes arising hereunder.
 
 n) If the Partner is based in a country other than those mentioned above:
 
-The law of the country in which the Partner is located, excluding any rules of conflict of
-laws, shall govern this Agreement.
+The law of the country in which the Partner is located, excluding any rules of conflict of laws, 
+shall govern this Agreement.
 
-8
-
-FA SEP 2021
-
-The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
+The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly 
 excluded.
 
-The competent court of the capital city in the country in which the Partner is located shall
-have non-exclusive jurisdiction over any disputes arising hereunder. Valeo reserves a right
-to choose a more appropriate jurisdiction under given circumstances.
+The competent court of the capital city in the country in which the Partner is located shall  
+have non-exclusive jurisdiction over any disputes arising hereunder. Valeo reserves a right to 
+choose a more appropriate jurisdiction under given circumstances.
 
 Article 13: Urgent measures
 
-Any violation or threatened violation of any terms of this Agreement can cause immediate
-and irreparable harm to a Party. Therefore, and notwithstanding any provisions herein and
-without prejudice to any rights and remedies otherwise available, a Party shall be entitled to
-seek equitable relief by way of injunction or other urgent proceeding in the event that the
-other Party breaches or threatens to breach any of the provisions of this Agreement before any
-competent court.
+8
 
-If an arbitration clause is applicable, such urgent measures may be initiated at any time
-including prior to the commencement of arbitration and may be carried out outside of the
-ambit of the arbitral institution. The Parties hereby expressly opt out of any such urgent
-measure rules of a given arbitral institution.
+S JUL 25
+
+Any violation or threatened violation of any terms of this Agreement can cause immediate and 
+irreparable harm to a Party. Therefore, and notwithstanding any provisions herein and without 
+prejudice to any rights and remedies otherwise available, a Party shall be entitled to seek 
+equitable relief by way of injunction or other urgent proceeding in the event that the other Party 
+breaches or threatens to breach any of the provisions of this Agreement before any competent 
+court.
+
+If   an   arbitration   clause   is   applicable,   such   urgent   measures   may   be   initiated   at   any   time 
+including prior to the commencement of arbitration and may be carried out outside of the ambit 
+of the arbitral institution. The Parties hereby expressly opt out of any such urgent measure rules 
+of a given arbitral institution.
 
 Article 14: Export control
 
-The Parties shall respect all applicable export control treaties, legislation or regulations. They
-shall not possess or be possessed by or work with, directly or indirectly, any legal entity or
+The Parties shall respect all applicable export control treaties, legislation or regulations. They 
+shall not possess or be possessed by or work with, directly or indirectly, any legal entity or 
 individual which are subject to export control sanctions anywhere, worldwide.
 
-The Parties shall obtain any necessary export license or other documentation prior to the
-exportation or re-exportation of any product, technical data, software or software source code
-covered under this Agreement or any direct product of such technical data, software or
-software source code.
+The Parties shall obtain any necessary export license or other documentation prior to the 
+exportation or re-exportation of any product, technical data, software or software source code 
+covered under this Agreement or any direct product of such technical data, software or software 
+source code. 
 
-Accordingly, neither Party shall sell, export, re-export, transfer, divert or otherwise dispose of
-any such product, technical data, software or software source code directly or indirectly to any
-person, firm, entity, country or countries prohibited by treaty, U.S., EU or other applicable
-laws.
+Accordingly, neither Party shall sell, export, re-export, transfer, divert or otherwise dispose of 
+any such product, technical data, software or software source code directly or indirectly to any 
+person, firm, entity, country or countries prohibited by treaty, U.S., EU or other applicable laws.
 
-Each Party shall secure, at its own expense, such licenses and export and import documents as
+Each Party shall secure, at its own expense, such licenses and export and import documents as  
 are necessary for each respective Party to fulfill its obligations under this Agreement.
 
 Article 15: Notice
 
 Notice shall be delivered to the following addresses:
 
-To Valeo:
-
 To Partner:
-
-9
-
-FA SEP 2021
-
-Address:
 
 Address:
 
-Valeo España S.AU..
-C/Linares Nº15
-23600 Martos (Jaén)
-Spain
-Attention:
+To Valeo:
 
-In witness whereof, this Agreement has been executed in two (2) counterparts. A scanned
-copy with the signatures of all the Parties shall be considered as an original.
+Address:
 
-For Valeo:
+Valeo Management
+100 rue de Courcelles
+75017 Paris, France
+Attention: General Counsel
+
+In witness whereof, this Agreement has been executed in two (2) counterparts. A scanned copy 
+with the signatures of all the Parties shall be considered as an original. 
+
+9
+
+S JUL 25
+
+For Valeo:
 
 For Partner:
 
 ____________________
 (Signature)
 
-Name: Cosmin Ceoinea
-Title: Electronic Project Buyer
-
-Date:
+Name: ______________
+Title: _______________
 
 ____________________
 (Signature)
 
 Name: ______________
 Title: _______________
+
+Date: _______________
 
 Date: _______________
 
 10
 
-FA SEP 2021
-
-APPENDIX 1: SUPPLEMENT TO THE
-FRAMEWORK CONFIDENTIALITY AGREEMENT
-
-The present Supplement is entered into by and between VALEO ESPAÑA S.A.U. and
-Exact name of Partner legal entity pursuant to the signature of the Framework Confidentiality
-Agreement as of 03/12/2024 (the “Agreement”).
-
-Consequently, the rights and obligations relating to the confidentiality of exchanged
-information are subject to the terms and conditions of the Agreement.
-
-1) Description of the Purpose: VW210 RL
-
-2) Effective Date of the Supplement: 03/12/2024
-
-3) Duration of the Supplement: 10 years from the Effective Date of the Supplement.
-
-4) Results: Any results generated in relation to the Purpose shall be the sole property of Valeo
-who has the sole right to use them and/or to proceed, at its sole discretion, with the
-registration of any patent or other intellectual property rights relating thereto.
-
-5) Agreement: All other provisions of the Agreement shall apply to this Supplement.
-
-In witness whereof, this Supplement has been executed in two (2) counterparts. A scanned
-copy with the signatures of all the Parties shall be considered as an original.
-
-For Valeo:
-
-For Partner:
-
-____________________
-(Signature)
-
-Name: Cosmin Ceoinea
-
-Title: Electronic Project Buyer
-
-Date:
-
-____________________
-(Signature)
-
-Name: ______________
-Duly authorized
-
-Title: _______________
-
-Date: _______________
-
-11
-
-FA SEP 2021
+S JUL 25
 
 

@@ -47,8 +47,8 @@ def split_contract_text(input_file_path, output_dir=None):
     if between_match:
         sections['between'] = between_match.group(1).strip()
     
-    # 3.Extract 'And' section - from "And:" (included) to "Article 1:" (not including)
-    and_match = re.search(r'(And:.*?)(?=\s*Article\s+1\s*:)', contract_text, re.DOTALL)
+    # 3.Extract 'And' section - from "And:" (included) to "Preamble" (not including)
+    and_match = re.search(r'(And:.*?)(?=\s*Preamble)', contract_text, re.DOTALL)
     if and_match:
         sections['and'] = and_match.group(1).strip()
     

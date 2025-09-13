@@ -16,7 +16,12 @@ from pdfminer.pdfpage import PDFPage
 from io import StringIO
 
 # Import the page break standardization function
-from txt_cleaner import standardize_page_breaks
+try:
+    # Intenta primero importación absoluta (cuando se ejecuta directamente)
+    from inspector_functions.txt_cleaner import standardize_page_breaks
+except ImportError:
+    # Si falla, usa importación relativa (cuando se importa como módulo)
+    from .txt_cleaner import standardize_page_breaks
 
 
 def convert_pdf_to_text(pdf_path):
@@ -30,17 +35,20 @@ def convert_pdf_to_text(pdf_path):
         str: Plain text content of the PDF with proper spacing
     """
     try:
+        print(f"[DEBUG] convert_pdf_to_text: Inicio de procesamiento para {pdf_path}")
+        
         # Check if file exists
         if not os.path.exists(pdf_path):
-            print(f"Error: File {pdf_path} does not exist.")
+            print(f"[ERROR] convert_pdf_to_text: El archivo {pdf_path} no existe")
             return ""
         
         # Check if file is a PDF
         if not pdf_path.lower().endswith('.pdf'):
-            print(f"Error: File {pdf_path} is not a PDF file.")
+            print(f"[ERROR] convert_pdf_to_text: El archivo {pdf_path} no es un PDF")
             return ""
         
-        print(f"Processing PDF: {pdf_path}")
+        print(f"[INFO] Processing PDF: {pdf_path}")
+        print(f"[DEBUG] convert_pdf_to_text: Tamaño del archivo: {os.path.getsize(pdf_path)} bytes")
         
         # Create a string buffer for the extracted text
         output_string = StringIO()
@@ -75,13 +83,18 @@ def convert_pdf_to_text(pdf_path):
         # Get the text from the string buffer
         text = output_string.getvalue()
         
-        print(f"Successfully extracted {len(text)} characters of text.")
+        print(f"[INFO] Successfully extracted {len(text)} characters of text.")
+        print(f"[DEBUG] convert_pdf_to_text: Primeros 100 caracteres: {text[:100].replace(chr(10), '\\n')}")
+        
+        if len(text) == 0:
+            print(f"[WARNING] convert_pdf_to_text: No se extrajo ningún texto del PDF")
+        
         return text
     
     except Exception as e:
         import traceback
-        print(f"Error processing PDF: {str(e)}")
-        print(traceback.format_exc())
+        print(f"[ERROR] convert_pdf_to_text: Error procesando PDF: {str(e)}")
+        print(f"[DEBUG] {traceback.format_exc()}")
         return ""
 
 

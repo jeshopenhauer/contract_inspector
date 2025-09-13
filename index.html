@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Inspector de Contratos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header header-flex">
         <h1>Inspector de Contratos</h1>
         <div class="header-actions">
+            
+            <div class="server-status">
+                <span id="server-indicator" class="indicator"></span>
+                <span id="server-status-text">Verificando...</span>
+            </div>
             <button class="btn" onclick="loadContract()">Cargar contrato PDF</button>
         </div>
     </div>
     <div id="panel-container"></div>
     
     
-    <script type="module">
-        import { loadContract } from './functions.js';
-        // Puedes llamar a loadContract() desde aquí o usarlo como handler en el botón.
+    <script>
+        // Cargar el script de manera tradicional para evitar problemas de CORS con módulos
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM cargado, inicializando aplicación...");
+        });
     </script>
+    <script src="functions.js"></script>
 </body>
 </html>

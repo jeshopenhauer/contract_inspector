@@ -48,6 +48,10 @@ Este proyecto proporciona una interfaz web para analizar y comparar contratos co
      ```
      ./open_app.sh
      ```
+   - En Windows:
+     ```
+     open_app.bat
+     ```
    - O abra manualmente en su navegador la URL: http://127.0.0.1:5000
 
 ### Uso de la aplicación

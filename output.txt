@@ -2,34 +2,57 @@ FRAMEWORK CONFIDENTIALITY AGREEMENT
 
 Between:
 
-VALEO ILUMINACIÓN S.A, a company organized and existing under the laws of Spain,
-the registered office of which is Calle Linares Nº 15, Martos (Jaén), registered under the CIF
+VALEO ESPAÑA S.A.U., a company organized and existing under the laws of Spain, the
+registered office of which is Calle Linares Nº 15, Martos (Jaén), registered under the CIF
 number A-08085235 in general book number 293, chapter 7309, page 37238 at the Trade and
 Companies Registry of Jaén.
 
-Represented by Mr. Rafael de Toro acting as Regional Operation Europe Operations
-Purchasing Director, duly authorized,
+Represented by Mr. Francisco José Morcillo Paredes acting as Electronic Project Buyer, duly
+authorized,
 
 Hereinafter referred to as “Valeo”,
 
 On the one hand
 
 And:
-Changsha Boda Technology Industry Co.Ltd, a corporation company organized and
-existing under the laws of people's republic of China, the registered office of which is at
-No.7Yongfu Road,Liuyang Hi-Tech Industrial Development Zone, Changsha City, Hunan
-Province, registered under the number 91430181779044137A at the Trade and Companies
-Registry of Changsha.
 
-Represented by . Zhenkai.He acting as Sales manager, duly authorized,
+Chin Poon
 
-Hereinafter referred to as the “Partner”,
+, a
+
+China
+
+under the laws of
+number
+
+China
+
+, the registered office of which is
+
+at the Trade and Companies Registry of
+
+company organized and existing
+, registered under the
+
+,
+
+Sales section manager
+
+Represented by Mr./Ms.
+
+Mandy Zhao
+
+acting as
+
+, duly authorized,
+
+Hereinafter referred to as “Partner”,
 
 On the other hand
 
 Also referred to as “Party” or “Parties” or “Disclosing Party” or “Receiving Party”, as the
 case may be. An Affiliate (as defined below) may also be a “Disclosing Party” or a
-“Receiving Party” .
+“Receiving Party”.
 
 Preamble
 
@@ -39,13 +62,17 @@ and know-how relating thereto
 Partner
 
 The Parties wish from time to time to examine and investigate the opportunity to work
-together on automotive project combining the respective crafts, skills and competencies of
+together on automotive projects combining the respective crafts, skills and competencies of
 each Party (the “Purpose”). The Purpose of each project will be further defined in each
 Supplement.
 
 In order to pursue the Purpose, each Party may, directly or through its Affiliates, need to
 provide to the other Party, directly or through its Affiliates, with certain information which is
 confidential, proprietary and otherwise not generally available to the public.
+
+1
+
+FA SEP 2021
 
 Therefore, the Parties have decided to enter into the present framework confidentiality
 agreement, which shall govern the disclosure and/or exchange of information pursuant to the
@@ -95,6 +122,10 @@ notably provide the details of (the list being not exhaustive):
 
 The Supplement will be established and signed prior to the exchange of Confidential
 Information.
+
+2
+
+FA SEP 2021
 
 Article 2: Exclusions
 
@@ -152,6 +183,10 @@ shall only be used by the Receiving Party in direct relation with the Purpose.
 
 Article 4: Restrictions
 
+3
+
+FA SEP 2021
+
 The provisions of this Agreement shall not be construed as implying an obligation of either
 Party:
 
@@ -206,6 +241,10 @@ Receiving Party shall, if required by the Disclosing Party, return the Confident
 and authorized copies within fifteen (15) calendar days and/or delete such from all computer
 files. If agreed by the Disclosing Party, the Confidential Information and authorized copies
 
+4
+
+FA SEP 2021
+
 thereof may also be destroyed by the Receiving Party. The Receiving Party shall provide a
 prompt written Notice to such effect.
 
@@ -231,8 +270,8 @@ There will be no disclosure of Personal Data to third parties under any circumst
 
 Article 9: Assignment
 
-This Agreement shall not be assigned or transferred to any third party without the prior written
-approval of the other Party.
+This Agreement shall not be assigned or transferred to any third party without the prior
+written approval of the other Party.
 
 Article 10: Modification
 
@@ -248,6 +287,10 @@ Article 12: Applicable Law/Jurisdiction
 a) If Valeo and the Partner are based in the same country:
 
 The law of Spain, excluding any rules of conflict of laws, shall govern this Agreement.
+
+5
+
+FA SEP 2021
 
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
@@ -278,8 +321,8 @@ Agreement.
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
-Valeo and Partner agree that any and all disputes between them will be resolved by, and
-they each consent to, the exclusive jurisdiction and venue of the Oakland County, Michigan
+Valeo and Partner agree that any and all disputes between them will be resolved by, and they
+each consent to, the exclusive jurisdiction and venue of the Oakland County, Michigan
 Circuit Court and the United States District Court for the Eastern District of Michigan,
 Southern Division to resolve any such disputes, including for lawsuits seeking monetary
 relief.
@@ -295,13 +338,15 @@ The China International Economic and Trade Arbitration Commission (CIETAC) – B
 Bureau will finally settle any disputes arising hereunder. The place of arbitration shall be
 Beijing. The arbitral tribunal shall consist of three (3) arbitrators. Each Party shall appoint
 one (1) arbitrator and those two (2) arbitrators shall choose the chairperson from a list of
-four
-(4) candidates – two (2) candidates submitted per Party. The chairperson shall not be or
+four (4) candidates – two (2) candidates submitted per Party. The chairperson shall not be or
 ever have been a national of France or China. The arbitration shall be conducted in English
-and
 
-all documents shall be in English. Each Party shall be responsible for half of the costs and
-fees of the arbitration. The arbitral award shall be final and binding on the Parties.
+6
+
+FA SEP 2021
+
+and all documents shall be in English. Each Party shall be responsible for half of the costs
+and fees of the arbitration. The arbitral award shall be final and binding on the Parties.
 
 e) If the Partner is based in the UK:
 
@@ -349,6 +394,10 @@ i) If the Partner is based in Japan:
 
 Japanese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
+7
+
+FA SEP 2021
+
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
@@ -371,8 +420,8 @@ Turkish law, excluding any rules of conflict of laws, shall govern this Agreemen
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
-The competent courts of Istanbul, Turkey shall have exclusive jurisdiction over any
-disputes arising hereunder.
+The competent courts of Istanbul, Turkey shall have exclusive jurisdiction over any disputes
+arising hereunder.
 
 l) If the Partner is based in Vietnam:
 
@@ -381,8 +430,8 @@ Vietnamese law, excluding any rules of conflict of laws, shall govern this Agree
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
-The competent courts of Saigon, Vietnam shall have exclusive jurisdiction over any
-disputes arising hereunder.
+The competent courts of Saigon, Vietnam shall have exclusive jurisdiction over any disputes
+arising hereunder.
 
 m) If the Partner is based in Thailand:
 
@@ -398,6 +447,10 @@ n) If the Partner is based in a country other than those mentioned above:
 
 The law of the country in which the Partner is located, excluding any rules of conflict of
 laws, shall govern this Agreement.
+
+8
+
+FA SEP 2021
 
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
@@ -432,97 +485,112 @@ covered under this Agreement or any direct product of such technical data, softw
 software source code.
 
 Accordingly, neither Party shall sell, export, re-export, transfer, divert or otherwise dispose of
-any such product,technical data, software or software source code directly or indirectly to any
+any such product, technical data, software or software source code directly or indirectly to any
 person, firm, entity, country or countries prohibited by treaty, U.S., EU or other applicable
 laws.
 
 Each Party shall secure, at its own expense, such licenses and export and import documents as
 are necessary for each respective Party to fulfill its obligations under this Agreement.
 
-Article 15: Notice
+Article 15: Notice
 
 Notice shall be delivered to the following addresses:
 
-TO VALEO:
+To Valeo:
 
-TO PARTNER:
+To Partner:
 
-ValeoIluminación S.A. C/Linares Nº15
+9
 
-No. 7, Yongfu Road
+FA SEP 2021
 
-23600 Martos (Jaén) Spain
+Address:
 
-Liuyang High-Tech Development Zone
+Address:
 
-Changsha, Hunan, China
+Valeo España S.AU..
+C/Linares Nº15
+23600 Martos (Jaén)
+Spain
+Attention:
 
-In witness whereof, this Agreement has been executed in two (2) counterparts. A scanned copy
-with the signatures of all the Parties shall be considered as an original.
+In witness whereof, this Agreement has been executed in two (2) counterparts. A scanned
+copy with the signatures of all the Parties shall be considered as an original.
 
 For Valeo:
 
 For Partner:
-_______
 
+____________________
 (Signature)
 
-Name: Macarena Fdez Torres
-Title: Project Buyer P1
+Name: Cosmin Ceoinea
+Title: Electronic Project Buyer
 
-Date:29/08/24
+Date:
 
+____________________
 (Signature)
 
-Name:Zhenkai.He
-Title: Sales Manager
+Name: ______________
+Title: _______________
 
-Date:23/01/25
+Date: _______________
+
+10
+
+FA SEP 2021
 
 APPENDIX 1: SUPPLEMENT TO THE
 FRAMEWORK CONFIDENTIALITY AGREEMENT
 
-The present Supplement is entered into by and between VALEO ILUMINACIÓN S.A.
-And Changsha Boda Technology Industry Co.Ltd. pursuant to the signature of the Framework
-Confidentiality
-Agreement as of (the “Agreement”).
+The present Supplement is entered into by and between VALEO ESPAÑA S.A.U. and
+Exact name of Partner legal entity pursuant to the signature of the Framework Confidentiality
+Agreement as of 03/12/2024 (the “Agreement”).
 
-Consequently, the rights and obligations relating to the confidentiality of exchanged information are
-subject to the terms and conditions of the Agreement.
+Consequently, the rights and obligations relating to the confidentiality of exchanged
+information are subject to the terms and conditions of the Agreement.
 
-1) Description of the Purpose:
+1) Description of the Purpose: VW210 RL
 
-VLS-LSE-MERCEDES_BENZ-H24x-HL
+2) Effective Date of the Supplement: 03/12/2024
 
-2) Effective Date of the Supplement: 29-08-2024
 3) Duration of the Supplement: 10 years from the Effective Date of the Supplement.
 
-4) Results: Any results generated in relation to the Purpose shall be the sole property ofValeo
-who has the sole right to use them and/or to proceed, at its sole discretion, with the registration
-of any patent or other intellectual property rights relating thereto.
+4) Results: Any results generated in relation to the Purpose shall be the sole property of Valeo
+who has the sole right to use them and/or to proceed, at its sole discretion, with the
+registration of any patent or other intellectual property rights relating thereto.
 
 5) Agreement: All other provisions of the Agreement shall apply to this Supplement.
 
-In witness whereof, this Supplement has been executed in two (2) counterparts. A scanned copy with
-the signatures of all the Parties shall be considered as an original
+In witness whereof, this Supplement has been executed in two (2) counterparts. A scanned
+copy with the signatures of all the Parties shall be considered as an original.
 
 For Valeo:
 
-________
 For Partner:
 
+____________________
 (Signature)
 
-Name:
-Title:
+Name: Cosmin Ceoinea
 
-Date: / /
+Title: Electronic Project Buyer
 
+Date:
+
+____________________
 (Signature)
 
-Name:Zhenkai.He
-Title: Sales Manager
+Name: ______________
+Duly authorized
 
-Date:23/01/25
+Title: _______________
+
+Date: _______________
+
+11
+
+FA SEP 2021
 
 

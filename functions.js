@@ -1,8 +1,90 @@
+// Función para mostrar un mensaje flash que desaparece después de 2 segundos
+function showFlashMessage(message, type = 'success', container = null, duration = 2000) {
+    // Si no se proporciona un contenedor, usar el panel principal
+    if (!container) {
+        container = document.getElementById('panel-container');
+        if (!container) return;
+    }
+    
+    // Eliminar cualquier mensaje flash previo del mismo tipo
+    const existingFlashes = container.querySelectorAll(`.flash-${type}`);
+    existingFlashes.forEach(flash => {
+        if (flash.parentNode) {
+            flash.parentNode.removeChild(flash);
+        }
+    });
+    
+    // Crear el elemento del mensaje flash
+    const flashDiv = document.createElement('div');
+    flashDiv.className = `flash-message flash-${type}`;
+    flashDiv.style.opacity = '1'; // Asegurarse de que sea visible inicialmente
+    flashDiv.innerHTML = message;
+    
+    // Añadir al inicio del contenedor
+    if (container.firstChild) {
+        container.insertBefore(flashDiv, container.firstChild);
+    } else {
+        container.appendChild(flashDiv);
+    }
+    
+    // Configurar para que se elimine después del tiempo especificado
+    setTimeout(() => {
+        // Aplicar animación de desvanecimiento
+        flashDiv.style.opacity = '0';
+        flashDiv.style.transform = 'translateY(-10px)';
+        flashDiv.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        
+        // Eliminar después de que termine la animación
+        setTimeout(() => {
+            if (flashDiv.parentNode) {
+                flashDiv.parentNode.removeChild(flashDiv);
+            }
+        }, 500);
+    }, duration);
+    
+    return flashDiv;
+}
+
 // Verificar la conexión al cargar la página y luego cada 10 segundos
+// Función para expandir/colapsar una tarjeta de reporte
+function toggleReportCard(id) {
+    const card = document.getElementById(id);
+    if (card) {
+        card.classList.toggle('expanded');
+    }
+}
+
+// Función para eliminar un elemento por su ID
+function removeElement(id, event) {
+    if (event) {
+        event.stopPropagation(); // Evitar que el click se propague al header
+    }
+    const element = document.getElementById(id);
+    if (element && element.parentNode) {
+        // Mostrar mensaje flash de información
+        showFlashMessage('Reporte cerrado', 'info');
+        
+        // Animación de desvanecimiento antes de eliminar
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(-20px)';
+        element.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        
+        setTimeout(() => {
+            if (element.parentNode) {
+                element.parentNode.removeChild(element);
+            }
+        }, 300);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Inicializando la aplicación...");
     checkServerConnection();
     setInterval(checkServerConnection, 10000);
+    
+    // Hacer las funciones accesibles globalmente
+    window.toggleReportCard = toggleReportCard;
+    window.removeElement = removeElement;
 });
 
 // Función para verificar el estado de la conexión al servidor
@@ -58,15 +140,8 @@ function loadContract() {
         if (!file) return;
         
         const panelContainer = document.getElementById('panel-container');
-        const info = `
-            <div class="contract-info">
-                <h3>Archivo cargado:</h3>
-                <p><strong>Nombre:</strong> ${file.name}</p>
-                <p><strong>Tamaño:</strong> ${(file.size / 1024).toFixed(2)} KB</p>
-                <p><strong>Tipo:</strong> ${file.type}</p>
-            </div>
-        `;
-        panelContainer.innerHTML = info;
+        // No mostramos la información del archivo, solo informamos que estamos procesando
+        panelContainer.innerHTML = "";
         const formData = new FormData();
         formData.append('file', file);
         
@@ -108,30 +183,49 @@ function loadContract() {
             
             if (data.success) {
                 // Eliminar todos los elementos de información previos
-                panelContainer.innerHTML = info;
+                panelContainer.innerHTML = "";
                 
                 // Si el servidor ya incluye el HTML del reporte
                 if (data.html) {
                     console.log('HTML recibido del servidor, mostrando reporte');
+                    
+                    // Mostrar mensaje flash de éxito
+                    showFlashMessage('✅ Archivo procesado correctamente', 'success');
+                    
+                    // Crear ID único para esta tarjeta
+                    const reportId = 'report-' + Date.now();
+                    
+                    // Mostrar el reporte como tarjeta colapsable
                     panelContainer.innerHTML += `
-                        <div class="contract-info">
-                            <p>✅ Archivo procesado correctamente</p>
-                        </div>
-                        <div class="report-section">
-                            <h2>Análisis del Contrato</h2>
-                            ${data.html}
+                        <div id="${reportId}" class="report-card">
+                            <div class="report-card-header" onclick="toggleReportCard('${reportId}')">
+                                <h3>Análisis del Contrato: ${file.name}</h3>
+                                <div style="display: flex; align-items: center;">
+                                    <button type="button" class="report-card-toggle" title="Expandir/Colapsar">▼</button>
+                                    <button type="button" class="report-card-close" title="Cerrar reporte" onclick="removeElement('${reportId}', event)">×</button>
+                                </div>
+                            </div>
+                            <div class="report-card-content">
+                                ${data.html}
+                            </div>
                         </div>
                     `;
+                    
+                    // Expandir automáticamente la tarjeta
+                    setTimeout(() => toggleReportCard(reportId), 100);
+                    
                     console.log('Reporte mostrado en el panel');
                 } else {
                     console.log('No se recibió HTML, solicitando análisis');
+                    
+                    // Mostrar mensaje flash de éxito
+                    showFlashMessage('✅ Archivo guardado como input.pdf', 'success');
+                    
+                    // Mostrar indicador de carga
                     panelContainer.innerHTML += `
-                        <div class="contract-info">
-                            <p>✅ Archivo guardado como input.pdf</p>
-                            <div class="loading-indicator">
-                                <p>Analizando contrato... Por favor espere.</p>
-                                <div class="spinner"></div>
-                            </div>
+                        <div class="loading-indicator">
+                            <p>Analizando contrato... Por favor espere.</p>
+                            <div class="spinner"></div>
                         </div>
                     `;
                     
@@ -146,6 +240,8 @@ function loadContract() {
         })
         .catch(error => {
             console.error('Error en la petición:', error);
+            
+            // Mostrar información del archivo
             panelContainer.innerHTML = `
                 <div class="contract-info">
                     <h3>Archivo cargado:</h3>
@@ -153,15 +249,48 @@ function loadContract() {
                     <p><strong>Tamaño:</strong> ${(file.size / 1024).toFixed(2)} KB</p>
                     <p><strong>Tipo:</strong> ${file.type}</p>
                 </div>
-                <div class="contract-info" style="border-left-color: #f44336;">
-                    <p>❌ Error al procesar el archivo: ${error.message}</p>
-                    <p>Por favor, verifica la conexión al servidor o inténtalo de nuevo.</p>
-                </div>
             `;
+            
+            // Mostrar mensaje de error como flash
+            showFlashMessage(`❌ Error al procesar el archivo: ${error.message}. Por favor, verifica la conexión al servidor o inténtalo de nuevo.`, 'error', panelContainer, 5000);
         });
     };
     
     fileInput.click();
+}
+
+// Función para expandir/colapsar una tarjeta de reporte
+function toggleReportCard(id) {
+    const reportCard = document.getElementById(id);
+    if (reportCard) {
+        reportCard.classList.toggle('expanded');
+        
+        // Cambiar el ícono del botón
+        const toggleBtn = reportCard.querySelector('.report-card-toggle');
+        if (toggleBtn) {
+            toggleBtn.textContent = reportCard.classList.contains('expanded') ? '▲' : '▼';
+        }
+    }
+}
+
+// Función para eliminar una tarjeta de reporte
+function removeElement(id, event) {
+    if (event) {
+        event.stopPropagation(); // Evitar que el clic se propague al elemento padre
+    }
+    const element = document.getElementById(id);
+    if (element) {
+        // Animar la salida
+        element.style.opacity = '0';
+        element.style.transform = 'scale(0.9)';
+        
+        // Eliminar después de la animación
+        setTimeout(() => {
+            if (element.parentNode) {
+                element.parentNode.removeChild(element);
+            }
+        }, 300);
+    }
 }
 
 // Función para analizar el contrato
@@ -230,13 +359,27 @@ function analyzeContract() {
             
             console.log(`HTML recibido (longitud: ${data.html.length} caracteres)`);
             
-            // Añadir el reporte HTML al panel
+            // Crear ID único para esta tarjeta
+            const reportId = 'report-' + Date.now();
+            
+            // Añadir el reporte HTML al panel como tarjeta colapsable
             panelContainer.innerHTML += `
-                <div class="report-section">
-                    <h2>Análisis del Contrato</h2>
-                    ${data.html}
+                <div id="${reportId}" class="report-card">
+                    <div class="report-card-header" onclick="toggleReportCard('${reportId}')">
+                        <h3>Análisis del Contrato</h3>
+                        <div style="display: flex; align-items: center;">
+                            <button type="button" class="report-card-toggle" title="Expandir/Colapsar">▼</button>
+                            <button type="button" class="report-card-close" title="Cerrar reporte" onclick="removeElement('${reportId}', event)">×</button>
+                        </div>
+                    </div>
+                    <div class="report-card-content">
+                        ${data.html}
+                    </div>
                 </div>
             `;
+            
+            // Expandir automáticamente la tarjeta
+            setTimeout(() => toggleReportCard(reportId), 100);
             
             console.log('Reporte HTML mostrado en el panel');
         } else {
@@ -253,11 +396,7 @@ function analyzeContract() {
             loadingIndicator.remove();
         }
         
-        panelContainer.innerHTML += `
-            <div class="contract-info" style="border-left-color: #f44336;">
-                <p>❌ Error al analizar el contrato: ${error.message}</p>
-                <p>Comprueba la consola del navegador (F12) para más detalles.</p>
-            </div>
-        `;
+        // Mostrar mensaje de error como flash
+        showFlashMessage(`❌ Error al analizar el contrato: ${error.message}. Comprueba la consola del navegador (F12) para más detalles.`, 'error', panelContainer, 5000);
     });
 }

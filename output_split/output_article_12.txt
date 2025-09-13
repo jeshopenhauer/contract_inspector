@@ -4,6 +4,10 @@ a) If Valeo and the Partner are based in the same country:
 
 The law of Spain, excluding any rules of conflict of laws, shall govern this Agreement.
 
+5
+
+FA SEP 2021
+
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
@@ -33,8 +37,8 @@ Agreement.
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
-Valeo and Partner agree that any and all disputes between them will be resolved by, and
-they each consent to, the exclusive jurisdiction and venue of the Oakland County, Michigan
+Valeo and Partner agree that any and all disputes between them will be resolved by, and they
+each consent to, the exclusive jurisdiction and venue of the Oakland County, Michigan
 Circuit Court and the United States District Court for the Eastern District of Michigan,
 Southern Division to resolve any such disputes, including for lawsuits seeking monetary
 relief.
@@ -50,13 +54,15 @@ The China International Economic and Trade Arbitration Commission (CIETAC) – B
 Bureau will finally settle any disputes arising hereunder. The place of arbitration shall be
 Beijing. The arbitral tribunal shall consist of three (3) arbitrators. Each Party shall appoint
 one (1) arbitrator and those two (2) arbitrators shall choose the chairperson from a list of
-four
-(4) candidates – two (2) candidates submitted per Party. The chairperson shall not be or
+four (4) candidates – two (2) candidates submitted per Party. The chairperson shall not be or
 ever have been a national of France or China. The arbitration shall be conducted in English
-and
 
-all documents shall be in English. Each Party shall be responsible for half of the costs and
-fees of the arbitration. The arbitral award shall be final and binding on the Parties.
+6
+
+FA SEP 2021
+
+and all documents shall be in English. Each Party shall be responsible for half of the costs
+and fees of the arbitration. The arbitral award shall be final and binding on the Parties.
 
 e) If the Partner is based in the UK:
 
@@ -104,6 +110,10 @@ i) If the Partner is based in Japan:
 
 Japanese law, excluding any rules of conflict of laws, shall govern this Agreement.
 
+7
+
+FA SEP 2021
+
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
@@ -126,8 +136,8 @@ Turkish law, excluding any rules of conflict of laws, shall govern this Agreemen
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
-The competent courts of Istanbul, Turkey shall have exclusive jurisdiction over any
-disputes arising hereunder.
+The competent courts of Istanbul, Turkey shall have exclusive jurisdiction over any disputes
+arising hereunder.
 
 l) If the Partner is based in Vietnam:
 
@@ -136,8 +146,8 @@ Vietnamese law, excluding any rules of conflict of laws, shall govern this Agree
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.
 
-The competent courts of Saigon, Vietnam shall have exclusive jurisdiction over any
-disputes arising hereunder.
+The competent courts of Saigon, Vietnam shall have exclusive jurisdiction over any disputes
+arising hereunder.
 
 m) If the Partner is based in Thailand:
 
@@ -153,6 +163,10 @@ n) If the Partner is based in a country other than those mentioned above:
 
 The law of the country in which the Partner is located, excluding any rules of conflict of
 laws, shall govern this Agreement.
+
+8
+
+FA SEP 2021
 
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly
 excluded.

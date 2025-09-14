@@ -222,7 +222,6 @@ def get_report_html(report, output_dir="output_split"):
     html.append('<div class="report-header">')
     html.append(f'<h2>Reporte de Análisis: {report["input_file"]}</h2>')
     html.append(f'<p>Generado el: {report["date"]}</p>')
-    html.append(f'<p class="status-{report["status"]}">Estado: {report["status"].upper()}</p>')
     html.append('</div>')
     
     # Quitar el resumen de pasos (simplificación solicitada)
@@ -250,7 +249,7 @@ def get_report_html(report, output_dir="output_split"):
     # Análisis combinado (estadísticas y párrafos)
     if report["statistics"] and report["paragraph_analysis"]:
         html.append('<div class="report-combined-analysis">')
-        html.append('<h3>Análisis Completo por Sección</h3>')
+        
         
         # Crear tabla en formato ASCII usando tabulate
         from tabulate import tabulate
@@ -353,7 +352,7 @@ def get_report_html(report, output_dir="output_split"):
         
         # Añadir sección de comparación visual con desplegables
         html.append('<div class="visual-comparison">')
-        html.append('<h3>Comparación Visual de Artículos</h3>')
+        
         
         # Incluir enlace a Material Icons
         html.append('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">')
@@ -376,10 +375,8 @@ def get_report_html(report, output_dir="output_split"):
                 # Añadir desplegable para el artículo del contrato
                 html.append(f'<details class="article-comparison">')
                 html.append(f'<summary>')
-                html.append(f'<div class="summary-content">output_{article_key} <span class="dropdown-icon">▼</span></div>')
-                html.append(f'<button onclick="copyToClipboard(this, \'output-content-{i}\', event)" class="copy-button" title="Copiar al portapapeles">')
-                html.append(f'<span class="material-icons">content_copy</span>')
-                html.append(f'</button>')
+                html.append(f'<div class="summary-content">output_{article_key}</div>')
+                html.append(f'<span class="dropdown-icon">▼</span>')
                 html.append(f'</summary>')
                 try:
                     with open(output_article_path, 'r', encoding='utf-8') as f:
@@ -398,10 +395,8 @@ def get_report_html(report, output_dir="output_split"):
                 # Añadir desplegable para el artículo de la plantilla
                 html.append(f'<details class="template-comparison">')
                 html.append(f'<summary>')
-                html.append(f'<div class="summary-content">template_{article_key} <span class="dropdown-icon">▼</span></div>')
-                html.append(f'<button onclick="copyToClipboard(this, \'template-content-{i}\', event)" class="copy-button" title="Copiar al portapapeles">')
-                html.append(f'<span class="material-icons">content_copy</span>')
-                html.append(f'</button>')
+                html.append(f'<div class="summary-content">template_{article_key}</div>')
+                html.append(f'<span class="dropdown-icon">▼</span>')
                 html.append(f'</summary>')
                 try:
                     with open(template_article_path, 'r', encoding='utf-8') as f:

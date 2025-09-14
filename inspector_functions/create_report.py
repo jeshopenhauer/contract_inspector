@@ -431,6 +431,27 @@ Fecha: {report['date']}
                     html.append(f'<p class="error">Error al leer el archivo: {str(e)}</p>')
                 html.append('</details>')
         
+        # Añadir sección para furthermore si existe
+        furthermore_path = os.path.join(output_dir, 'output_furthermore.txt')
+        if os.path.exists(furthermore_path):
+            # Añadir desplegable para la sección furthermore
+            html.append(f'<details class="article-comparison">')
+            html.append(f'<summary>')
+            html.append(f'<div class="summary-content">output_furthermore</div>')
+            html.append(f'<span class="dropdown-icon">▼</span>')
+            html.append(f'</summary>')
+            try:
+                with open(furthermore_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                    html.append(f'<div class="content-container">')
+                    html.append(f'<pre id="output-furthermore" class="article-content ascii-style">')
+                    html.append(content)
+                    html.append('</pre>')
+                    html.append('</div>')
+            except Exception as e:
+                html.append(f'<p class="error">Error al leer el archivo furthermore: {str(e)}</p>')
+            html.append('</details>')
+        
         html.append('</div>')
         
         # Añadir JavaScript para la función de copiar al portapapeles

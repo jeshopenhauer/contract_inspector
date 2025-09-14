@@ -1,12 +1,10 @@
 Between:
 
-VALEO ESPAÑA S.A.U., a company organized and existing under the laws of Spain, the
-registered office of which is Calle Linares Nº 15, Martos (Jaén), registered under the CIF
-number A-08085235 in general book number 293, chapter 7309, page 37238 at the Trade and
-Companies Registry of Jaén.
+[Exact name of Valeo legal entity], a [specify legal entity] company organized and existing 
+under the laws of [Country], the registered office of which is [address], registered under the 
+number [number] at the Trade and Companies Registry of [City],
 
-Represented by Mr. Francisco José Morcillo Paredes acting as Electronic Project Buyer, duly
-authorized,
+Represented by Mr./Ms. [First name, Last name] acting as [position], duly authorized,
 
 Hereinafter referred to as “Valeo”,
 

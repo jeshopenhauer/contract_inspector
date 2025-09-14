@@ -64,7 +64,7 @@ def split_contract_text(input_file_path, output_dir=None):
         if article_match:
             sections[f'article_{i}'] = article_match.group(1).strip()
     
-    # 6. Extract Article 15 - from "Article 15:" to ===PAGE_BREAK=== or end
+    # 6. Extract Article 15 - from "Article 15:" to the second occurrence of "Date:" AFTER Article 15
     
     # Find the position of Article 15 start
     article_15_start_match = re.search(r'Article\s*15\s*:', contract_text)
@@ -72,20 +72,27 @@ def split_contract_text(input_file_path, output_dir=None):
     if article_15_start_match:
         article_15_start_pos = article_15_start_match.start()
         
-        # Find the position of ===PAGE_BREAK=== after Article 15
-        page_break_pos = contract_text.find('===PAGE_BREAK===', article_15_start_pos)
+        # Find all occurrences of "Date:" in the text AFTER Article 15
+        date_positions_after_article15 = [m.start() for m in re.finditer(r'Date\s*:', contract_text[article_15_start_pos:])]
+        # Adjust positions to be relative to the start of the document
+        date_positions_after_article15 = [pos + article_15_start_pos for pos in date_positions_after_article15]
         
-        if page_break_pos != -1:
-            # Article 15 ends at page break
-            article_15_text = contract_text[article_15_start_pos:page_break_pos].strip()
+        # We need the second occurrence of "Date:" AFTER Article 15
+        # If there are fewer than 2 "Date:" occurrences after Article 15, use whatever we have
+        if len(date_positions_after_article15) >= 2:
+            # Get the position of the second Date: after Article 15
+            second_date_pos = date_positions_after_article15[1]
+            
+            # Article 15 ends at the second Date: position
+            article_15_text = contract_text[article_15_start_pos:second_date_pos].strip()
             sections['article_15'] = article_15_text
             
-            # Everything after the page break (including the page break marker) until the end is "furthermore"
-            furthermore_text = contract_text[page_break_pos:].strip()
+            # Everything after the second Date: until the end is "furthermore"
+            furthermore_text = contract_text[second_date_pos:].strip()
             if furthermore_text:
                 sections['furthermore'] = furthermore_text
         else:
-            # No page break found - Article 15 goes to the end of the document
+            # No Date: found after Article 15 - Article 15 goes to the end of the document
             article_15_text = contract_text[article_15_start_pos:].strip()
             sections['article_15'] = article_15_text
     

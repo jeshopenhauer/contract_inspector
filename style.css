@@ -22,6 +22,8 @@ body {
             margin-top: 30px;
             background-color: #fff;
             padding: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             font-family: monospace;
             border-top: 1px solid #ddd;
         }
@@ -122,8 +124,11 @@ body {
             padding: 0;
             border-radius: 0;
             margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
             border: none;
             font-family: monospace;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .report-header {
@@ -407,7 +412,7 @@ body {
             white-space: pre;
             background-color: #f8f8f8;
             border-radius: 0;
-            padding: 0;
+            padding: 15px 20px;
             overflow-x: auto;
             margin: 0;
             color: #333;
@@ -415,6 +420,7 @@ body {
             border: none;
             font-size: 14px;
             width: 100%;
+            box-sizing: border-box;
         }
         
         /* Estilos para la sección de comparación visual */

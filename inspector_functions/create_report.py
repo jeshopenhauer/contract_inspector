@@ -355,8 +355,8 @@ Fecha: {report['date']}
         
         # No cerramos el div.report-container aquí, lo haremos al final
         
-        # Añadir sección de comparación visual con desplegables (sin crear separación)
-        html.append('<div class="visual-comparison" style="margin-top:0; padding-top:0;">')
+        # Añadir sección de comparación visual con desplegables (con separación)
+        html.append('<div class="visual-comparison" style="margin-top:30px; padding-top:20px;">')
         
         
         # Incluir enlace a Material Icons

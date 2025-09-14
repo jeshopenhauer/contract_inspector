@@ -19,10 +19,11 @@ body {
         
         /* Estilos para la sección de comparación visual */
         .visual-comparison {
-            margin-top: 0;
-            background-color: #f8f8f8;
-            padding: 0;
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
             font-family: monospace;
+            border-top: 1px solid #ddd;
         }
         .header {
             background-color: #fff;

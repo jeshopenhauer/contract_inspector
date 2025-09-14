@@ -18,12 +18,12 @@ sys.path.append(os.path.dirname(current_dir))  # Añadir el directorio padre al 
 # Importar funciones necesarias de otros módulos
 try:
     # Intenta primero importación absoluta (cuando se ejecuta directamente)
-    from inspector_functions.pdf_to_txt_pdfminer import convert_pdf_to_text
+    from inspector_functions.pdf_to_txt_pdfminer import convert_pdf_to_text, get_pdf_info
     from inspector_functions.txt_to_txt_splitter import split_contract_text
     from inspector_functions.txt_cleaner import standardize_page_breaks
 except ImportError:
     # Si falla, usa importación relativa (cuando se importa como módulo)
-    from .pdf_to_txt_pdfminer import convert_pdf_to_text
+    from .pdf_to_txt_pdfminer import convert_pdf_to_text, get_pdf_info
     from .txt_to_txt_splitter import split_contract_text
     from .txt_cleaner import standardize_page_breaks
 
@@ -41,11 +41,18 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
     Returns:
         dict: Un diccionario con los resultados del análisis para ser entregado al cliente
     """
+    # Obtener información del PDF (número de páginas y metadatos)
+    page_count, metadata = get_pdf_info(input_pdf)
+    standard_page_count = 10  # Número estándar de páginas para este tipo de contrato
+    
     report = {
         "timestamp": time.time(),
         "date": time.strftime("%Y-%m-%d %H:%M:%S"),
         "input_file": os.path.basename(input_pdf),
         "status": "processing",
+        "page_count": page_count,
+        "standard_page_ratio": page_count / standard_page_count if standard_page_count > 0 else 0,
+        "metadata": metadata,
         "statistics": {},
         "paragraph_analysis": {},
         "warnings": [],
@@ -298,8 +305,47 @@ def get_report_html(report, output_dir="output_split"):
         # Generar tabla ASCII
         ascii_table = tabulate(table_data, headers=headers, tablefmt="grid")
         
-        # Añadir la tabla ASCII al HTML como texto preformateado
+        # Crear una tabla ASCII para información de páginas y metadatos
+        page_ratio = report.get("standard_page_ratio", 0)
+        page_count = report.get("page_count", 0)
+        standard_page_count = 10  # Número estándar de páginas
+        
+        # Información sobre páginas
+        page_info = [
+            ["Información de Páginas", "Valor"],
+            ["Número de páginas en el documento", f"{page_count}"],
+            ["Número estándar de páginas", f"{standard_page_count}"],
+            ["Ratio de páginas (Actual/Estándar)", f"{page_ratio:.2f}"]
+        ]
+        
+        page_info_table = tabulate(page_info, headers="firstrow", tablefmt="grid")
+        
+        # Información sobre metadatos
+        metadata = report.get("metadata", {})
+        metadata_rows = [["Metadatos del PDF", "Valor"]]
+        
+        # Filtrar y mostrar los metadatos más relevantes
+        important_keys = ['Title', 'Author', 'Creator', 'Producer', 'CreationDate', 'ModDate', 'Subject', 'Keywords']
+        for key in important_keys:
+            if key in metadata:
+                value = metadata[key]
+                # Truncar valores muy largos
+                if len(str(value)) > 50:
+                    value = str(value)[:47] + "..."
+                metadata_rows.append([key, value])
+        
+        # Si no hay metadatos importantes, mostrar un mensaje
+        if len(metadata_rows) == 1:
+            metadata_rows.append(["No se encontraron metadatos", "-"])
+        
+        metadata_table = tabulate(metadata_rows, headers="firstrow", tablefmt="grid")
+        
+        # Añadir las tablas ASCII al HTML como texto preformateado
         html.append('<pre class="ascii-table">')
+        html.append(page_info_table)
+        html.append('\n\n')
+        html.append(metadata_table)
+        html.append('\n\n')
         html.append(ascii_table)
         html.append('</pre>')
         
@@ -308,6 +354,9 @@ def get_report_html(report, output_dir="output_split"):
         # Añadir sección de comparación visual con desplegables
         html.append('<div class="visual-comparison">')
         html.append('<h3>Comparación Visual de Artículos</h3>')
+        
+        # Incluir enlace a Material Icons
+        html.append('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">')
         
         # Obtener la ruta al directorio de plantillas
         base_dir = Path(__file__).parent.parent
@@ -326,13 +375,20 @@ def get_report_html(report, output_dir="output_split"):
             if os.path.exists(output_article_path):
                 # Añadir desplegable para el artículo del contrato
                 html.append(f'<details class="article-comparison">')
-                html.append(f'<summary>output_{article_key} ▽</summary>')
+                html.append(f'<summary>')
+                html.append(f'<div class="summary-content">output_{article_key} <span class="dropdown-icon">▼</span></div>')
+                html.append(f'<button onclick="copyToClipboard(this, \'output-content-{i}\', event)" class="copy-button" title="Copiar al portapapeles">')
+                html.append(f'<span class="material-icons">content_copy</span>')
+                html.append(f'</button>')
+                html.append(f'</summary>')
                 try:
                     with open(output_article_path, 'r', encoding='utf-8') as f:
                         content = f.read()
-                        html.append('<pre class="article-content">')
+                        html.append(f'<div class="content-container">')
+                        html.append(f'<pre id="output-content-{i}" class="article-content">')
                         html.append(content)
                         html.append('</pre>')
+                        html.append('</div>')
                 except Exception as e:
                     html.append(f'<p class="error">Error al leer el archivo: {str(e)}</p>')
                 html.append('</details>')
@@ -341,18 +397,136 @@ def get_report_html(report, output_dir="output_split"):
             if os.path.exists(template_article_path):
                 # Añadir desplegable para el artículo de la plantilla
                 html.append(f'<details class="template-comparison">')
-                html.append(f'<summary>template_{article_key} ▽</summary>')
+                html.append(f'<summary>')
+                html.append(f'<div class="summary-content">template_{article_key} <span class="dropdown-icon">▼</span></div>')
+                html.append(f'<button onclick="copyToClipboard(this, \'template-content-{i}\', event)" class="copy-button" title="Copiar al portapapeles">')
+                html.append(f'<span class="material-icons">content_copy</span>')
+                html.append(f'</button>')
+                html.append(f'</summary>')
                 try:
                     with open(template_article_path, 'r', encoding='utf-8') as f:
                         content = f.read()
-                        html.append('<pre class="template-content">')
+                        html.append(f'<div class="content-container">')
+                        html.append(f'<pre id="template-content-{i}" class="template-content">')
                         html.append(content)
                         html.append('</pre>')
+                        html.append('</div>')
                 except Exception as e:
                     html.append(f'<p class="error">Error al leer el archivo: {str(e)}</p>')
                 html.append('</details>')
         
         html.append('</div>')
+        
+        # Añadir JavaScript para la función de copiar al portapapeles
+        html.append('''
+        <script>
+        function copyToClipboard(button, elementId, event) {
+            // Evitar que se abra/cierre el desplegable
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else if (window.event) {
+                window.event.preventDefault();
+                window.event.stopPropagation();
+            }
+            
+            // Obtener el elemento con el contenido
+            const element = document.getElementById(elementId);
+            if (!element) {
+                console.error(`Elemento con ID ${elementId} no encontrado`);
+                return;
+            }
+            
+            console.log(`Copiando contenido del elemento: ${elementId}`);
+            const text = element.textContent || element.innerText;
+            console.log(`Longitud del texto: ${text.length} caracteres`);
+            
+            // Guardar el icono original
+            const iconSpan = button.querySelector('.material-icons');
+            const originalIcon = iconSpan.textContent;
+            
+            // Método fallback para navegadores que no soportan clipboard API
+            function fallbackCopyTextToClipboard(text) {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                
+                // Hacerlo invisible
+                textArea.style.position = "fixed";
+                textArea.style.top = "0";
+                textArea.style.left = "0";
+                textArea.style.width = "2em";
+                textArea.style.height = "2em";
+                textArea.style.padding = "0";
+                textArea.style.border = "none";
+                textArea.style.outline = "none";
+                textArea.style.boxShadow = "none";
+                textArea.style.background = "transparent";
+                
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                let successful = false;
+                try {
+                    successful = document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback: Error al copiar', err);
+                }
+                
+                document.body.removeChild(textArea);
+                return successful;
+            }
+            
+            // Intentar usar el API de Clipboard moderno primero
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    // Cambiar el icono y dar feedback visual
+                    iconSpan.textContent = 'check';
+                    button.classList.add('copy-success');
+                    
+                    // Restaurar el icono original después de 2 segundos
+                    setTimeout(() => {
+                        iconSpan.textContent = 'content_copy';
+                        button.classList.remove('copy-success');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Error al copiar al portapapeles: ', err);
+                    // Intentar método fallback
+                    if (fallbackCopyTextToClipboard(text)) {
+                        iconSpan.textContent = 'check';
+                        button.classList.add('copy-success');
+                    } else {
+                        iconSpan.textContent = 'error';
+                        button.classList.add('copy-error');
+                    }
+                    
+                    // Restaurar el icono original después de 2 segundos
+                    setTimeout(() => {
+                        iconSpan.textContent = 'content_copy';
+                        button.classList.remove('copy-success');
+                        button.classList.remove('copy-error');
+                    }, 2000);
+                });
+            } else {
+                // Fallback para navegadores más antiguos
+                if (fallbackCopyTextToClipboard(text)) {
+                    iconSpan.textContent = 'check';
+                    button.classList.add('copy-success');
+                } else {
+                    iconSpan.textContent = 'error';
+                    button.classList.add('copy-error');
+                }
+                
+                // Restaurar el icono original después de 2 segundos
+                setTimeout(() => {
+                    iconSpan.textContent = 'content_copy';
+                    button.classList.remove('copy-success');
+                    button.classList.remove('copy-error');
+                }, 2000);
+            }
+        }
+        </script>
+        ''')
     
     html.append('</div>')  # Cierra report-container
     

@@ -17,6 +17,3 @@ d)        shall only be used by the Receiving Party in direct relation with the 
 
 
 If software or samples or prototypes are provided hereunder, the Receiving Party shall not reserve engineer, including but not limited to disassembling and decompiling, any such software or samples or prototypes.
-
-
-

@@ -1,8 +1,15 @@
 {
-  "timestamp": 1757804684.6876967,
-  "date": "2025-09-14 01:04:44",
+  "timestamp": 1757869374.1769311,
+  "date": "2025-09-14 19:02:54",
   "input_file": "input.pdf",
   "status": "complete",
+  "page_count": 10,
+  "standard_page_ratio": 1.0,
+  "metadata": {
+    "Creator": "\u0000W\u0000r\u0000i\u0000t\u0000e\u0000r",
+    "Producer": "\u0000L\u0000i\u0000b\u0000r\u0000e\u0000O\u0000f\u0000f\u0000i\u0000c\u0000e\u0000 \u00002\u00004\u0000.\u00002",
+    "CreationDate": "D:20250913230505+02'00'"
+  },
   "statistics": {
     "article_1": {
       "output_stats": {
@@ -52,26 +59,26 @@
         "u_count": 29
       },
       "template_stats": {
-        "word_count": 170,
+        "word_count": 174,
         "period_count": 2,
         "comma_count": 5,
-        "s_count": 48,
+        "s_count": 49,
         "a_count": 59,
         "e_count": 93,
         "i_count": 77,
         "o_count": 71,
-        "u_count": 28
+        "u_count": 29
       },
       "ratios": {
-        "word_count": "1.0235294117647058",
+        "word_count": "1.0",
         "period_count": "1.0",
         "comma_count": "1.0",
-        "s_count": "1.0208333333333333",
+        "s_count": "1.0",
         "a_count": "1.0",
         "e_count": "1.0",
         "i_count": "1.0",
         "o_count": "1.0",
-        "u_count": "1.0357142857142858"
+        "u_count": "1.0"
       }
     },
     "article_3": {
@@ -122,26 +129,26 @@
         "u_count": 7
       },
       "template_stats": {
-        "word_count": 71,
+        "word_count": 75,
         "period_count": 1,
         "comma_count": 1,
-        "s_count": 16,
+        "s_count": 17,
         "a_count": 22,
         "e_count": 35,
         "i_count": 29,
         "o_count": 36,
-        "u_count": 6
+        "u_count": 7
       },
       "ratios": {
-        "word_count": "1.056338028169014",
+        "word_count": "1.0",
         "period_count": "1.0",
         "comma_count": "1.0",
-        "s_count": "1.0625",
+        "s_count": "1.0",
         "a_count": "1.0",
         "e_count": "1.0",
         "i_count": "1.0",
         "o_count": "1.0",
-        "u_count": "1.1666666666666667"
+        "u_count": "1.0"
       }
     },
     "article_5": {
@@ -227,26 +234,26 @@
         "u_count": 23
       },
       "template_stats": {
-        "word_count": 184,
+        "word_count": 188,
         "period_count": 8,
         "comma_count": 10,
-        "s_count": 45,
+        "s_count": 46,
         "a_count": 74,
         "e_count": 128,
         "i_count": 94,
         "o_count": 73,
-        "u_count": 22
+        "u_count": 23
       },
       "ratios": {
-        "word_count": "1.0217391304347827",
+        "word_count": "1.0",
         "period_count": "1.0",
         "comma_count": "1.0",
-        "s_count": "1.0222222222222221",
+        "s_count": "1.0",
         "a_count": "1.0",
         "e_count": "1.0",
         "i_count": "1.0",
         "o_count": "1.0",
-        "u_count": "1.0454545454545454"
+        "u_count": "1.0"
       }
     },
     "article_8": {
@@ -402,26 +409,26 @@
         "u_count": 162
       },
       "template_stats": {
-        "word_count": 1010,
+        "word_count": 1022,
         "period_count": 64,
         "comma_count": 77,
-        "s_count": 336,
+        "s_count": 339,
         "a_count": 410,
         "e_count": 651,
         "i_count": 401,
         "o_count": 360,
-        "u_count": 159
+        "u_count": 162
       },
       "ratios": {
-        "word_count": "1.011881188118812",
+        "word_count": "1.0",
         "period_count": "0.78125",
         "comma_count": "1.0",
-        "s_count": "1.0089285714285714",
+        "s_count": "1.0",
         "a_count": "1.002439024390244",
         "e_count": "1.001536098310292",
         "i_count": "1.0024937655860349",
         "o_count": "1.0",
-        "u_count": "1.0188679245283019"
+        "u_count": "1.0"
       }
     },
     "article_13": {
@@ -507,26 +514,26 @@
         "u_count": 10
       },
       "template_stats": {
-        "word_count": 80,
+        "word_count": 85,
         "period_count": 2,
         "comma_count": 2,
-        "s_count": 26,
+        "s_count": 27,
         "a_count": 34,
         "e_count": 56,
         "i_count": 21,
         "o_count": 22,
-        "u_count": 9
+        "u_count": 10
       },
       "ratios": {
-        "word_count": "1.0625",
+        "word_count": "1.0",
         "period_count": "1.0",
         "comma_count": "1.0",
-        "s_count": "1.0384615384615385",
+        "s_count": "1.0",
         "a_count": "1.0",
         "e_count": "1.0",
         "i_count": "1.0",
         "o_count": "1.0",
-        "u_count": "1.1111111111111112"
+        "u_count": "1.0"
       }
     }
   },
@@ -537,19 +544,19 @@
       "ratio": "5/5"
     },
     "article_2": {
-      "output_paragraphs": 13,
-      "template_paragraphs": 8,
-      "ratio": "13/8"
+      "output_paragraphs": 10,
+      "template_paragraphs": 10,
+      "ratio": "10/10"
     },
     "article_3": {
-      "output_paragraphs": 8,
+      "output_paragraphs": 7,
       "template_paragraphs": 7,
-      "ratio": "8/7"
+      "ratio": "7/7"
     },
     "article_4": {
-      "output_paragraphs": 10,
-      "template_paragraphs": 5,
-      "ratio": "10/5"
+      "output_paragraphs": 7,
+      "template_paragraphs": 7,
+      "ratio": "7/7"
     },
     "article_5": {
       "output_paragraphs": 3,
@@ -563,8 +570,8 @@
     },
     "article_7": {
       "output_paragraphs": 5,
-      "template_paragraphs": 3,
-      "ratio": "5/3"
+      "template_paragraphs": 5,
+      "ratio": "5/5"
     },
     "article_8": {
       "output_paragraphs": 2,
@@ -588,8 +595,8 @@
     },
     "article_12": {
       "output_paragraphs": 66,
-      "template_paragraphs": 58,
-      "ratio": "66/58"
+      "template_paragraphs": 66,
+      "ratio": "66/66"
     },
     "article_13": {
       "output_paragraphs": 5,
@@ -603,8 +610,8 @@
     },
     "article_15": {
       "output_paragraphs": 20,
-      "template_paragraphs": 17,
-      "ratio": "20/17"
+      "template_paragraphs": 20,
+      "ratio": "20/20"
     },
     "preamble": {
       "output_paragraphs": 8,

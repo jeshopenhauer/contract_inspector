@@ -11,9 +11,7 @@ b) has been disclosed by a third party (other than a duly authorized third party
 circumstances, that the information had been obtained directly or indirectly from the Disclosing 
 Party and that the disclosure of the information was made unlawfully;
 
-that was already in the possession of the Receiving Party prior to the date of disclosure 
-
-c)
+c) that was already in the possession of the Receiving Party prior to the date of disclosure 
 and is not subject to an obligation of confidentiality;
 
 2
@@ -22,14 +20,10 @@ S JUL 25
 
 
 ===PAGE_BREAK===
-is subsequently independently developed by the Receiving Party without access to the 
-
-d)
+d) is subsequently independently developed by the Receiving Party without access to the 
 Confidential Information;
 
-the disclosure of which is authorized by the Disclosing Party in writing in advance of the 
-
-e)
+e) the disclosure of which is authorized by the Disclosing Party in writing in advance of the 
 disclosure.
 
 A Party which relies on one of the foregoing exclusions carries the burden of proving it.

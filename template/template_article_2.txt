@@ -12,6 +12,9 @@ b)        has been disclosed by a third party (other than a duly authorized thir
 
 c)        that was already in the possession of the Receiving Party prior to the date of disclosure and is not subject to an obligation of confidentiality;
 
+2
+
+S JUL 25
 
 d)        is subsequently independently developed by the Receiving Party without access to the Confidential Information;
 
@@ -20,7 +23,3 @@ e)        the disclosure of which is authorized by the Disclosing Party in writi
 
 
 A Party which relies on one of the foregoing exclusions carries the burden of proving it.
-
-
-
-

@@ -11,7 +11,3 @@ Article 1: Definitions
 
 
 1.4        “Notice” means a registered letter with return receipt requested or an overnight carrier such as DHL or FedEx. 
-
-
-
-

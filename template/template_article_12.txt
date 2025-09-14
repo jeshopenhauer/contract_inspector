@@ -16,7 +16,13 @@ The Vienna Convention on the International Sale of Goods of 1980 is hereby expre
 The competent court of [capital city of the above-mentioned country] shall have exclusive jurisdiction over any disputes arising hereunder.
 
 
-	2. If the Partner is based in any member state country of the European Union, the European Economic Area, the Lugano Conventions, Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Lichtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden or Switzerland:
+	2. If the Partner is based in any member state country of the European Union, the European Economic Area, the Lugano Conventions, Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia,
+	
+	5
+
+	S JUL 25
+
+	 Lichtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden or Switzerland:
 
 
 French law, excluding any rules of conflict of laws, shall govern this Agreement.
@@ -25,7 +31,14 @@ French law, excluding any rules of conflict of laws, shall govern this Agreement
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly excluded.
 
 
-The competent courts of Paris, France shall have exclusive jurisdiction over any disputes arising hereunder.
+The competent courts of Paris, France shall have exclusive jurisdiction over any disputes 
+
+
+6
+
+S JUL 25
+
+arising hereunder.
 
 
 	3. If the Partner is based in the United States:
@@ -35,6 +48,11 @@ The laws of the State of Michigan, excluding any rules of conflict of laws, shal
 
 
 The Vienna Convention on the International Sale of Goods of 1980 is hereby expressly excluded.
+
+7
+
+S JUL 25
+
 
 
 Valeo and Partner agree that any and all disputes between them will be resolved by, and they each consent to, the exclusive jurisdiction and venue of the Oakland County, Michigan Circuit Court and the United States District Court for the Eastern District of Michigan, Southern Division to resolve any such disputes, including for lawsuits seeking monetary relief.
@@ -170,9 +188,3 @@ The Vienna Convention on the International Sale of Goods of 1980 is hereby expre
 
 
 The competent court of the capital city in the country in which the Partner is located shall have non-exclusive jurisdiction over any disputes arising hereunder. Valeo reserves a right to choose a more appropriate jurisdiction under given circumstances.
-
-
-	
-
-
-

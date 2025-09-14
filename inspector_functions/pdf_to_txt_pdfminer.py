@@ -13,15 +13,25 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
+from pdfminer.pdfparser import PDFParser
+from pdfminer.pdfdocument import PDFDocument
 from io import StringIO
+import traceback
 
 # Import the page break standardization function
 try:
-    # Intenta primero importación absoluta (cuando se ejecuta directamente)
-    from inspector_functions.txt_cleaner import standardize_page_breaks
-except ImportError:
-    # Si falla, usa importación relativa (cuando se importa como módulo)
+    # Intenta primero importación relativa (cuando se importa como módulo)
     from .txt_cleaner import standardize_page_breaks
+except ImportError:
+    # Si falla, usa importación directa (cuando se ejecuta como script)
+    import sys
+    import os
+    # Añadir el directorio padre al path para poder importar el módulo
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(script_dir)
+    if parent_dir not in sys.path:
+        sys.path.append(parent_dir)
+    from inspector_functions.txt_cleaner import standardize_page_breaks
 
 
 def convert_pdf_to_text(pdf_path):
@@ -60,7 +70,7 @@ def convert_pdf_to_text(pdf_path):
         laparams = LAParams(
             line_margin=0.5,       # Valor moderado para mantener párrafos juntos
             word_margin=0.1,       # Valor estándar para espaciado entre palabras
-            char_margin=5.0,       # Valor más alto para no unir demasiado los caracteres
+            char_margin=7.0,       # Valor más alto para no unir demasiado los caracteres
             boxes_flow=0.5,        # Valor estándar para el flujo de texto
             detect_vertical=False,  # Detectar texto vertical
             all_texts=True         # Incluir todo el texto, incluso en figuras
@@ -129,15 +139,64 @@ def compare_preview(text, max_length=200):
     print(f"Preview: {preview}...")
 
 
+def get_pdf_info(pdf_path):
+    """
+    Extract metadata and page count from a PDF file.
+    
+    Args:
+        pdf_path (str): Path to the PDF file
+        
+    Returns:
+        tuple: (page_count, metadata_dict) containing the number of pages and metadata
+    """
+    metadata = {}
+    page_count = 0
+    
+    try:
+        if not os.path.exists(pdf_path):
+            print(f"[ERROR] get_pdf_info: El archivo {pdf_path} no existe")
+            return page_count, metadata
+            
+        # Open the PDF file
+        with open(pdf_path, 'rb') as file:
+            # Create a PDF parser object
+            parser = PDFParser(file)
+            
+            # Create a PDF document object
+            document = PDFDocument(parser)
+            
+            # Get document info (metadata)
+            if document.info:
+                for info in document.info:
+                    for key, value in info.items():
+                        if isinstance(value, bytes):
+                            try:
+                                # Try to decode as UTF-8
+                                metadata[key] = value.decode('utf-8', errors='ignore')
+                            except:
+                                metadata[key] = str(value)
+                        else:
+                            metadata[key] = str(value)
+            
+            # Count the pages
+            page_count = sum(1 for _ in PDFPage.create_pages(document))
+            
+            return page_count, metadata
+    except Exception as e:
+        print(f"[ERROR] get_pdf_info: Error obteniendo información del PDF: {str(e)}")
+        print(f"[DEBUG] {traceback.format_exc()}")
+        return page_count, metadata
 
 
 # Execute the function when this script is run directly
 if __name__ == "__main__":
     import os.path
+    import sys
     
     # Input and output file paths with absolute paths
     # Obtenemos la ruta del directorio raíz del proyecto (contract_inspector)
-    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(script_dir)
     
     # Construimos las rutas absolutas
     input_pdf = os.path.join(root_dir, "input.pdf")

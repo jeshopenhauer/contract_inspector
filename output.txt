@@ -96,23 +96,17 @@ b) has been disclosed by a third party (other than a duly authorized third party
 circumstances, that the information had been obtained directly or indirectly from the Disclosing 
 Party and that the disclosure of the information was made unlawfully;
 
-that was already in the possession of the Receiving Party prior to the date of disclosure 
-
-c)
+c) that was already in the possession of the Receiving Party prior to the date of disclosure 
 and is not subject to an obligation of confidentiality;
 
 2
 
 S JUL 25
 
-is subsequently independently developed by the Receiving Party without access to the 
-
-d)
+d) is subsequently independently developed by the Receiving Party without access to the 
 Confidential Information;
 
-the disclosure of which is authorized by the Disclosing Party in writing in advance of the 
-
-e)
+e) the disclosure of which is authorized by the Disclosing Party in writing in advance of the 
 disclosure.
 
 A Party which relies on one of the foregoing exclusions carries the burden of proving it.
@@ -121,22 +115,19 @@ Article 3: Preservation and Restricted Use of Confidential Information
 
 All Confidential Information:
 
-a)
-shall be safely and securely kept and stored by the Receiving Party. The Receiving Party 
+a) shall be safely and securely kept and stored by the Receiving Party. The Receiving Party 
 shall protect the Confidential Information with the same degree of care as the Receiving Party 
 uses with its own Confidential Information (but in no event with less than reasonable care) in 
 order   to   prevent   the   express,   inadvertent   or   accidental   disclosure   of   the   Confidential 
 Information and shall limit the reproduction and disclosure of such Confidential Information to 
 its employees or directors to a strict need-to-know basis.
 
-b)
-shall only be disclosed  to the Receiving Party’s employees on a strict need-to-know 
+b) shall only be disclosed  to the Receiving Party’s employees on a strict need-to-know 
 basis. The Receiving Party shall ensure that such employees are bound by confidentiality 
 undertakings at least as restrictive as those contained in this Agreement. The Receiving Party  
 shall remain responsible for compliance with this Agreement by its Affiliates.
 
-c)
-shall not be disclosed to third parties without the express written prior authorization of 
+c) shall not be disclosed to third parties without the express written prior authorization of 
 the Disclosing Party. In the exceptional case when the Disclosing Party does authorize such 
 disclosure,   the   Receiving   Party   wishing   to   so   disclose   to   the   third   party   shall   execute   a 
 confidentiality agreement with the same or substantially the same terms as those provided in 
@@ -147,9 +138,7 @@ give prompt Notice of such request to the Disclosing Party (including by e-mail,
 which is acknowledged) in order to permit the Disclosing Party to seek an appropriate limitation 
 or remedy prior to such disclosure.
 
-d)
-
-shall only be used by the Receiving Party in direct relation with the Purpose.
+d) shall only be used by the Receiving Party in direct relation with the Purpose.
 
 If software or samples or prototypes are provided hereunder, the Receiving Party shall not 
 reserve   engineer,   including   but   not   limited   to   disassembling   and   decompiling,   any   such 
@@ -164,19 +153,13 @@ Party:
 
 S JUL 25
 
-to provide any Confidential Information to the other Party, whether at its own initiative 
-
-a)
+a) to provide any Confidential Information to the other Party, whether at its own initiative 
 or at the request of the other Party;
 
-to enter into any further contract with the other Party in relation with the Purpose or 
-
-b)
+b) to enter into any further contract with the other Party in relation with the Purpose or 
 otherwise;
 
-c)
-
-to propose or to purchase products to/from third parties.
+c) to propose or to purchase products to/from third parties.
 
 Article 5: Ownership of the Confidential Information/Results
 

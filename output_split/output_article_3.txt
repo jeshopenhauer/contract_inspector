@@ -2,31 +2,18 @@ Article 3: Preservation and Restricted Use of Confidential Information
 
 All Confidential Information:
 
-a) shall be safely and securely kept and stored by the Receiving Party. The Receiving Party 
-shall protect the Confidential Information with the same degree of care as the Receiving Party 
-uses with its own Confidential Information (but in no event with less than reasonable care) in 
-order   to   prevent   the   express,   inadvertent   or   accidental   disclosure   of   the   Confidential 
-Information and shall limit the reproduction and disclosure of such Confidential Information to 
-its employees or directors to a strict need-to-know basis.
+a) shall be safely and securely kept and stored by the Receiving Party. The Receiving
+Party shall protect the Confidential Information with the same degree of care as the Receiving
+Party uses with its own Confidential Information (but in no event with less than reasonable
+care) in order to prevent the express, inadvertent or accidental disclosure of the Confidential
+Information and shall limit the reproduction and disclosure of such Confidential Information
+to its employees or directors to a strict need-to-know basis.
 
-b) shall only be disclosed  to the Receiving Party’s employees on a strict need-to-know 
-basis. The Receiving Party shall ensure that such employees are bound by confidentiality 
-undertakings at least as restrictive as those contained in this Agreement. The Receiving Party  
-shall remain responsible for compliance with this Agreement by its Affiliates.
+b) shall not be disclosed to third Parties without the express written prior authorization of
+the Disclosing Party. If the Confidential Information is requested by a public authority as
+required by an applicable law or regulation (to the extent permitted by such laws or
+regulations), the Receiving Party shall give prompt Notice of such request to the Disclosing
+Party (including by e-mail, the receipt of which is acknowledged) in order to permit the
+Disclosing Party to seek an appropriate limitation or remedy prior to such disclosure.
 
-c) shall not be disclosed to third parties without the express written prior authorization of 
-the Disclosing Party. In the exceptional case when the Disclosing Party does authorize such 
-disclosure,   the   Receiving   Party   wishing   to   so   disclose   to   the   third   party   shall   execute   a 
-confidentiality agreement with the same or substantially the same terms as those provided in 
-this Agreement and that Receiving Party shall remain liable for any disclosure by the third party. 
-If the Confidential Information is requested by a public authority as required by an applicable 
-law or regulation (to the extent permitted by such laws or regulations), the Receiving Party shall 
-give prompt Notice of such request to the Disclosing Party (including by e-mail, the receipt of 
-which is acknowledged) in order to permit the Disclosing Party to seek an appropriate limitation 
-or remedy prior to such disclosure.
-
-d) shall only be used by the Receiving Party in direct relation with the Purpose.
-
-If software or samples or prototypes are provided hereunder, the Receiving Party shall not 
-reserve   engineer,   including   but   not   limited   to   disassembling   and   decompiling,   any   such 
-software or samples or prototypes.
+c) shall only be used by the Receiving Party in direct relation with the Purpose.

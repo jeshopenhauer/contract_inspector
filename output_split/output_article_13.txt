@@ -1,19 +1,13 @@
 Article 13: Urgent measures
 
-8
+Any violation or threatened violation of any terms of this Agreement can cause immediate
+and irreparable harm to a Party. Therefore, and notwithstanding any provisions herein and
+without prejudice to any rights and remedies otherwise available, a Party shall be entitled to
+seek equitable relief by way of injunction or other urgent proceeding in the event that the
+other Party breaches or threatens to breach any of the provisions of this Agreement before any
+competent court.
 
-S JUL 25
-
-
-===PAGE_BREAK===
-Any violation or threatened violation of any terms of this Agreement can cause immediate and 
-irreparable harm to a Party. Therefore, and notwithstanding any provisions herein and without 
-prejudice to any rights and remedies otherwise available, a Party shall be entitled to seek 
-equitable relief by way of injunction or other urgent proceeding in the event that the other Party 
-breaches or threatens to breach any of the provisions of this Agreement before any competent 
-court.
-
-If   an   arbitration   clause   is   applicable,   such   urgent   measures   may   be   initiated   at   any   time 
-including prior to the commencement of arbitration and may be carried out outside of the ambit 
-of the arbitral institution. The Parties hereby expressly opt out of any such urgent measure rules 
-of a given arbitral institution.
+If an arbitration clause is applicable, such urgent measures may be initiated at any time
+including prior to the commencement of arbitration and may be carried out outside of the
+ambit of the arbitral institution. The Parties hereby expressly opt out of any such urgent
+measure rules of a given arbitral institution.

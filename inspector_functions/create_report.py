@@ -94,6 +94,26 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
             
         print(f"[INFO] create_report: PASO 1 completado")
         
+        # Paso 1.5: Aplicar limpieza al archivo de texto completo
+        print(f"[INFO] create_report: PASO 1.5 - Aplicando limpieza al archivo de texto completo")
+        cleaned_output_txt = output_txt
+        try:
+            print(f"[DEBUG] create_report: Verificando existencia del archivo de texto {output_txt}")
+            if os.path.exists(output_txt):
+                print(f"[DEBUG] create_report: El archivo {output_txt} existe y tiene {os.path.getsize(output_txt)} bytes")
+                # Aplicar limpieza al archivo completo
+                print(f"[DEBUG] create_report: Limpiando archivo {output_txt}")
+                standardize_page_breaks(output_txt, output_txt)
+                print(f"[DEBUG] create_report: Archivo {output_txt} limpiado correctamente")
+            else:
+                print(f"[ERROR] create_report: El archivo {output_txt} no existe")
+                raise FileNotFoundError(f"Archivo no encontrado: {output_txt}")
+        except Exception as e:
+            print(f"[WARNING] create_report: Error al limpiar archivo {output_txt}: {str(e)}")
+            report["warnings"].append(f"Error al limpiar archivo de texto completo: {str(e)}")
+            
+        print(f"[INFO] create_report: PASO 1.5 completado")
+        
         # Paso 2: Dividir el texto en secciones
         print(f"[INFO] create_report: PASO 2 - Dividiendo texto en secciones")
         
@@ -102,7 +122,7 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
         os.makedirs(output_dir, exist_ok=True)
         
         try:
-            print(f"[DEBUG] create_report: Verificando existencia del archivo de texto {output_txt}")
+            print(f"[DEBUG] create_report: Verificando existencia del archivo de texto limpio {output_txt}")
             if os.path.exists(output_txt):
                 print(f"[DEBUG] create_report: El archivo {output_txt} existe y tiene {os.path.getsize(output_txt)} bytes")
             else:
@@ -120,17 +140,7 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
             for section, path in (split_results.items() if isinstance(split_results, dict) else []):
                 print(f"[DEBUG] create_report:   - {section}: {path}")
                 
-            # Aplicar limpieza a cada archivo generado
-            print(f"[INFO] create_report: Aplicando limpieza a los archivos generados")
-            for section, path in (split_results.items() if isinstance(split_results, dict) else []):
-                try:
-                    # Limpiar y guardar con el mismo nombre para mantener la estructura
-                    print(f"[DEBUG] create_report: Limpiando archivo {path}")
-                    standardize_page_breaks(path, path)
-                    print(f"[DEBUG] create_report: Archivo {path} limpiado correctamente")
-                except Exception as e:
-                    print(f"[WARNING] create_report: Error al limpiar archivo {path}: {str(e)}")
-                    # Continuamos con el siguiente archivo si hay error en uno
+            # Ya no es necesario aplicar limpieza a cada archivo pues ya se limpió el archivo original
         except Exception as e:
             import traceback
             error_msg = f"Error al dividir el texto: {str(e)}"

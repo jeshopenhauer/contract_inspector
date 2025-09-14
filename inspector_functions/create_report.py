@@ -216,13 +216,18 @@ def get_report_html(report, output_dir="output_split"):
         str: HTML formateado del reporte
     """
     html = []
+    # Iniciar el contenedor principal del reporte en formato ASCII
     html.append('<div class="report-container">')
     
-    # Encabezado del reporte
-    html.append('<div class="report-header">')
-    html.append(f'<h2>Reporte de Análisis: {report["input_file"]}</h2>')
-    html.append(f'<p>Generado el: {report["date"]}</p>')
-    html.append('</div>')
+    # Iniciar el contenedor ASCII único para todo el reporte
+    html.append('<pre class="ascii-table">')
+    
+    # Encabezado del reporte con estilo ASCII simple
+    header_ascii = f"""REPORTE DE ANÁLISIS DE CONTRATO
+Archivo: {report['input_file']}
+Fecha: {report['date']}
+
+"""
     
     # Quitar el resumen de pasos (simplificación solicitada)
     
@@ -339,19 +344,19 @@ def get_report_html(report, output_dir="output_split"):
         
         metadata_table = tabulate(metadata_rows, headers="firstrow", tablefmt="grid")
         
-        # Añadir las tablas ASCII al HTML como texto preformateado
-        html.append('<pre class="ascii-table">')
+        # Añadir directamente las tablas ASCII al contenedor único
+        html.append(header_ascii)  # Ya se inicializó el encabezado antes
         html.append(page_info_table)
-        html.append('\n\n')
+        html.append('\n')
         html.append(metadata_table)
-        html.append('\n\n')
+        html.append('\n')
         html.append(ascii_table)
-        html.append('</pre>')
+        html.append('</pre>')  # Cerrar el contenedor ASCII único
         
-        html.append('</div>')
+        # No cerramos el div.report-container aquí, lo haremos al final
         
-        # Añadir sección de comparación visual con desplegables
-        html.append('<div class="visual-comparison">')
+        # Añadir sección de comparación visual con desplegables (sin crear separación)
+        html.append('<div class="visual-comparison" style="margin-top:0; padding-top:0;">')
         
         
         # Incluir enlace a Material Icons
@@ -381,9 +386,12 @@ def get_report_html(report, output_dir="output_split"):
                 try:
                     with open(output_article_path, 'r', encoding='utf-8') as f:
                         content = f.read()
+                        # Mostrar directamente el contenido sin encabezado
+                        content_ascii = content
+                        
                         html.append(f'<div class="content-container">')
-                        html.append(f'<pre id="output-content-{i}" class="article-content">')
-                        html.append(content)
+                        html.append(f'<pre id="output-content-{i}" class="article-content ascii-style">')
+                        html.append(content_ascii)
                         html.append('</pre>')
                         html.append('</div>')
                 except Exception as e:
@@ -401,9 +409,12 @@ def get_report_html(report, output_dir="output_split"):
                 try:
                     with open(template_article_path, 'r', encoding='utf-8') as f:
                         content = f.read()
+                        # Mostrar directamente el contenido sin encabezado
+                        content_ascii = content
+                        
                         html.append(f'<div class="content-container">')
-                        html.append(f'<pre id="template-content-{i}" class="template-content">')
-                        html.append(content)
+                        html.append(f'<pre id="template-content-{i}" class="template-content ascii-style">')
+                        html.append(content_ascii)
                         html.append('</pre>')
                         html.append('</div>')
                 except Exception as e:

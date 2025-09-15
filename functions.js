@@ -93,9 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Función para obtener la URL base del servidor
 function getServerBaseUrl() {
-    // Si estamos en localhost, usar también localhost para el servidor
+    // Si estamos en localhost durante desarrollo, usar localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         return 'http://127.0.0.1:5000';
+    }
+    
+    // Si estamos en Vercel, usar la URL base actual (sin puerto)
+    if (window.location.hostname.includes('vercel.app') || window.location.protocol === 'https:') {
+        return window.location.origin;
     }
     
     // En otro caso, intentar usar la misma IP pero puerto 5000

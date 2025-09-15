@@ -1,0 +1,51 @@
+# Archivos Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Archivos virtuales de entorno
+venv/
+ENV/
+env/
+
+# Archivos de IDE y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos específicos del proyecto
+input.pdf
+output.txt
+contract_report.json
+server.log
+
+# Directorios de caché
+output_split/
+output_split_statistics_check/
+__pycache__/
+
+# Archivos específicos de Vercel
+.vercel
+/api
+
+# Archivos sensibles
+.env
+.env.local

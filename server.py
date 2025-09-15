@@ -216,5 +216,10 @@ def analyze_contract():
         }), 500
 
 
+# Obtener puerto de la variable de entorno o usar 5000 por defecto
+port = int(os.environ.get("PORT", 5000))
+# Obtener modo debug de la variable de entorno o usar True por defecto
+debug_mode = os.environ.get("DEBUG_MODE", "True").lower() == "true"
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, host='0.0.0.0')
+    app.run(debug=debug_mode, port=port, host='0.0.0.0')

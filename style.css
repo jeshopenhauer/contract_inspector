@@ -36,12 +36,41 @@ body {
         }
 
         .header-flex {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-
-
+        
+        /* Indicador de estado del servidor */
+        .server-status {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+        
+        .indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            background-color: #ccc;
+        }
+        
+        .indicator.online {
+            background-color: #4CAF50;
+            box-shadow: 0 0 5px #4CAF50;
+        }
+        
+        .indicator.offline {
+            background-color: #F44336;
+            box-shadow: 0 0 5px #F44336;
+        }
+        
+        #server-status-text {
+            color: #666;
+        }
         h1, h2 {
             margin: 0;
             color: royalblue;

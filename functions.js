@@ -1,3 +1,6 @@
+// URL base del servidor local
+const SERVER_BASE_URL = 'http://127.0.0.1:5050';
+
 // Función para mostrar un mensaje flash que desaparece después de 2 segundos
 function showFlashMessage(message, type = 'success', container = null, duration = 2000) {
     // Si no se proporciona un contenedor, usar el panel principal
@@ -45,111 +48,70 @@ function showFlashMessage(message, type = 'success', container = null, duration 
     return flashDiv;
 }
 
-// Verificar la conexión al cargar la página y luego cada 10 segundos
-// Función para expandir/colapsar una tarjeta de reporte
-function toggleReportCard(id) {
-    const card = document.getElementById(id);
-    if (card) {
-        card.classList.toggle('expanded');
-    }
-}
-
-// Función para eliminar un elemento por su ID
-function removeElement(id, event) {
-    if (event) {
-        event.stopPropagation(); // Evitar que el click se propague al header
-    }
-    const element = document.getElementById(id);
-    if (element && element.parentNode) {
-        // Mostrar mensaje flash de información
-        showFlashMessage('Reporte cerrado', 'info');
-        
-        // Animación de desvanecimiento antes de eliminar
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(-20px)';
-        element.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        
-        setTimeout(() => {
-            if (element.parentNode) {
-                element.parentNode.removeChild(element);
-            }
-        }, 300);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Inicializando la aplicación...");
-    checkServerConnection();
-    setInterval(checkServerConnection, 10000);
-    
-    // Hacer las funciones accesibles globalmente
-    window.toggleReportCard = toggleReportCard;
-    window.removeElement = removeElement;
-    window.clearSavedReports = clearSavedReports;
-    
-    // Cargar reportes guardados desde localStorage
-    loadSavedReports();
-});
-
-// Función para obtener la URL base del servidor
-function getServerBaseUrl() {
-    // Si estamos en localhost durante desarrollo, usar localhost
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return 'http://127.0.0.1:5000';
-    }
-    
-    // Si estamos en Vercel, usar la URL base actual (sin puerto)
-    if (window.location.hostname.includes('vercel.app') || window.location.protocol === 'https:') {
-        return window.location.origin;
-    }
-    
-    // En otro caso, intentar usar la misma IP pero puerto 5000
-    return `http://${window.location.hostname}:5000`;
-}
-
-// Función para verificar el estado de la conexión al servidor
+// Función para verificar el estado de la conexión al servidor local
 function checkServerConnection() {
     const indicator = document.getElementById('server-indicator');
     const statusText = document.getElementById('server-status-text');
     
-    // Usar URL dinámica basada en la ubicación actual
-    const serverUrl = `${getServerBaseUrl()}/?t=${Date.now()}`; // Añadir timestamp para evitar caché
+    // Añadir timestamp para evitar caché
+    const url = `${SERVER_BASE_URL}/status?t=${Date.now()}`;
     
-    console.log(`Verificando conexión con el servidor en: ${serverUrl}`);
-    
-    // Hacer una petición más simple para evitar problemas de CORS
-    fetch(serverUrl, {
-        method: 'GET',
-        mode: 'cors'
-    })
+    fetch(url, { method: 'GET' })
     .then(response => {
-        console.log('Respuesta del servidor:', response.status, response.statusText);
         if (!response.ok) {
             throw new Error(`Error HTTP: ${response.status}`);
         }
         indicator.classList.remove('offline');
         indicator.classList.add('online');
-        statusText.textContent = '';
+        statusText.textContent = 'Conectado';
         return response.json();
-    })
-    .then(data => {
-        console.log('Servidor respondió:', data);
-        // No hacemos nada más con los datos, solo verificamos que respondió
     })
     .catch(error => {
         console.error('Error al verificar conexión:', error);
         indicator.classList.remove('online');
         indicator.classList.add('offline');
-        statusText.textContent = 'Servidor desconectado';
+        statusText.textContent = 'Desconectado';
     });
 }
 
-// Verificar la conexión al cargar la página y luego cada 10 segundos
-document.addEventListener('DOMContentLoaded', () => {
-    checkServerConnection();
-    setInterval(checkServerConnection, 10000);
-});
+// Función para expandir/colapsar una tarjeta de reporte
+function toggleReportCard(id) {
+    const reportCard = document.getElementById(id);
+    if (reportCard) {
+        reportCard.classList.toggle('expanded');
+        
+        // Cambiar el ícono del botón
+        const toggleBtn = reportCard.querySelector('.report-card-toggle');
+        if (toggleBtn) {
+            toggleBtn.textContent = reportCard.classList.contains('expanded') ? '▲' : '▼';
+        }
+    }
+}
 
+// Función para eliminar una tarjeta de reporte
+function removeElement(id, event) {
+    if (event) {
+        event.stopPropagation(); // Evitar que el clic se propague al elemento padre
+    }
+    const element = document.getElementById(id);
+    if (element) {
+        // Animar la salida
+        element.style.opacity = '0';
+        element.style.transform = 'scale(0.9)';
+        
+        // Eliminar después de la animación
+        setTimeout(() => {
+            if (element.parentNode) {
+                element.parentNode.removeChild(element);
+                
+                // Eliminar también del almacenamiento local
+                removeReportFromLocalStorage(id);
+            }
+        }, 300);
+    }
+}
+
+// Función para cargar y procesar un contrato PDF
 function loadContract() {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
@@ -160,10 +122,8 @@ function loadContract() {
         if (!file) return;
         
         const panelContainer = document.getElementById('panel-container');
-        // No mostramos la información del archivo, solo informamos que estamos procesando
+        // Limpiar el panel
         panelContainer.innerHTML = "";
-        const formData = new FormData();
-        formData.append('file', file);
         
         // Mostrar indicador de carga mientras se sube el archivo
         panelContainer.innerHTML += `
@@ -175,27 +135,22 @@ function loadContract() {
             </div>
         `;
         
-        console.log('Enviando archivo al servidor...');
+        console.log('Enviando archivo al servidor local...');
         
-        // Usar URL dinámica basada en la ubicación actual
-        const serverUrl = `${getServerBaseUrl()}/upload`;
-        console.log(`Conectando con el servidor en: ${serverUrl}`);
+        const formData = new FormData();
+        formData.append('file', file);
         
-        fetch(serverUrl, {
+        // Enviar el archivo al servidor local
+        fetch(`${SERVER_BASE_URL}/upload`, {
             method: 'POST',
-            body: formData,
-            mode: 'cors',  // Asegurarse de que las solicitudes cross-origin funcionen
-            credentials: 'omit' // No enviar cookies ni credenciales para evitar problemas CORS
+            body: formData
         })
         .then(response => {
             console.log('Respuesta recibida del servidor:', response.status, response.statusText);
             if (!response.ok) {
                 throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
             }
-            return response.json().catch(error => {
-                console.error("Error al parsear JSON:", error);
-                throw new Error("Error al procesar la respuesta del servidor");
-            });
+            return response.json();
         })
         .then(data => {
             console.log('Datos recibidos del servidor:', data);
@@ -237,27 +192,10 @@ function loadContract() {
                     setTimeout(() => toggleReportCard(reportId), 100);
                     
                     console.log('Reporte mostrado en el panel');
-                } else {
-                    console.log('No se recibió HTML, solicitando análisis');
-                    
-                    // Mostrar mensaje flash de éxito
-                    showFlashMessage('✅ Archivo guardado como input.pdf', 'success');
-                    
-                    // Mostrar indicador de carga
-                    panelContainer.innerHTML += `
-                        <div class="loading-indicator">
-                            <p>Analizando contrato... Por favor espere.</p>
-                            <div class="spinner"></div>
-                        </div>
-                    `;
-                    
-                    // Si el servidor no incluye el HTML, hacer otra petición para analizarlo
-                    console.log('Iniciando temporizador para solicitar análisis en 1 segundo');
-                    setTimeout(analyzeContract, 1000);
                 }
             } else {
                 console.error('Error en la respuesta del servidor:', data.error);
-                throw new Error(data.error);
+                throw new Error(data.error || 'Error desconocido');
             }
         })
         .catch(error => {
@@ -274,159 +212,11 @@ function loadContract() {
             `;
             
             // Mostrar mensaje de error como flash
-            showFlashMessage(`❌ Error al procesar el archivo: ${error.message}. Por favor, verifica la conexión al servidor o inténtalo de nuevo.`, 'error', panelContainer, 5000);
+            showFlashMessage(`❌ Error al procesar el archivo: ${error.message}. Por favor, verifica que el servidor local esté funcionando.`, 'error', panelContainer, 5000);
         });
     };
     
     fileInput.click();
-}
-
-// Función para expandir/colapsar una tarjeta de reporte
-function toggleReportCard(id) {
-    const reportCard = document.getElementById(id);
-    if (reportCard) {
-        reportCard.classList.toggle('expanded');
-        
-        // Cambiar el ícono del botón
-        const toggleBtn = reportCard.querySelector('.report-card-toggle');
-        if (toggleBtn) {
-            toggleBtn.textContent = reportCard.classList.contains('expanded') ? '▲' : '▼';
-        }
-    }
-}
-
-// Función para eliminar una tarjeta de reporte
-function removeElement(id, event) {
-    if (event) {
-        event.stopPropagation(); // Evitar que el clic se propague al elemento padre
-    }
-    const element = document.getElementById(id);
-    if (element) {
-        // Animar la salida
-        element.style.opacity = '0';
-        element.style.transform = 'scale(0.9)';
-        
-        // Eliminar después de la animación
-        setTimeout(() => {
-            if (element.parentNode) {
-                element.parentNode.removeChild(element);
-                
-                // Eliminar también del almacenamiento local
-                removeReportFromLocalStorage(id);
-            }
-        }, 300);
-    }
-}
-
-// Función para analizar el contrato
-function analyzeContract() {
-    const panelContainer = document.getElementById('panel-container');
-    
-    // Usar URL dinámica basada en la ubicación actual
-    const serverUrl = `${getServerBaseUrl()}/analyze?format=html&t=${Date.now()}`; // Añadir timestamp para evitar caché
-    console.log(`Solicitando análisis desde: ${serverUrl}`);
-    
-    // Mostrar mensaje de que se está realizando el análisis
-    const loadingMessage = document.querySelector('.loading-indicator');
-    if (loadingMessage) {
-        const messageText = loadingMessage.querySelector('p');
-        if (messageText) {
-            messageText.textContent = 'Conectando con el servidor para análisis...';
-        }
-    }
-    
-    fetch(serverUrl, {
-        method: 'GET',
-        mode: 'cors',  // Asegurarse de que las solicitudes cross-origin funcionen
-        credentials: 'omit' // No enviar cookies ni credenciales para evitar problemas CORS
-    })
-    .then(response => {
-        console.log('Respuesta de análisis recibida:', response.status, response.statusText);
-        
-        if (loadingMessage) {
-            const messageText = loadingMessage.querySelector('p');
-            if (messageText) {
-                messageText.textContent = 'Procesando respuesta del servidor...';
-            }
-        }
-        
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
-        }
-        
-        // Intentar leer el texto primero para diagnosticar cualquier problema
-        return response.text().then(text => {
-            console.log(`Respuesta recibida del servidor (primeros 200 caracteres): ${text.substring(0, 200)}`);
-            try {
-                // Intentar parsear como JSON
-                return JSON.parse(text);
-            } catch (error) {
-                console.error("Error al parsear JSON:", error);
-                console.error("Texto recibido:", text);
-                throw new Error("Error al parsear la respuesta del servidor como JSON");
-            }
-        });
-    })
-    .then(data => {
-        console.log('Datos del análisis procesados:', data.success ? 'Éxito' : 'Error');
-        
-        if (data.success) {
-            // Eliminar el indicador de carga
-            const loadingIndicator = document.querySelector('.loading-indicator');
-            if (loadingIndicator) {
-                loadingIndicator.remove();
-            }
-            
-            if (!data.html) {
-                console.error('No se recibió contenido HTML en la respuesta');
-                throw new Error('No se recibió contenido HTML del servidor');
-            }
-            
-            console.log(`HTML recibido (longitud: ${data.html.length} caracteres)`);
-            
-            // Crear ID único para esta tarjeta
-            const reportId = 'report-' + Date.now();
-            
-            // Añadir el reporte HTML al panel como tarjeta colapsable
-            panelContainer.innerHTML += `
-                <div id="${reportId}" class="report-card">
-                    <div class="report-card-header" onclick="toggleReportCard('${reportId}')">
-                        <h3>Análisis del Contrato</h3>
-                        <div style="display: flex; align-items: center;">
-                            <button type="button" class="report-card-toggle" title="Expandir/Colapsar">▼</button>
-                            <button type="button" class="report-card-close" title="Cerrar reporte" onclick="removeElement('${reportId}', event)">×</button>
-                        </div>
-                    </div>
-                    <div class="report-card-content">
-                        ${data.html}
-                    </div>
-                </div>
-            `;
-            
-            // Guardar el reporte en localStorage
-            saveReportToLocalStorage(reportId, "Análisis del Contrato", data.html);
-            
-            // Expandir automáticamente la tarjeta
-            setTimeout(() => toggleReportCard(reportId), 100);
-            
-            console.log('Reporte HTML mostrado en el panel');
-        } else {
-            console.error('Error en la respuesta:', data.error);
-            throw new Error(data.error || 'Error desconocido en el servidor');
-        }
-    })
-    .catch(error => {
-        console.error('Error al analizar contrato:', error);
-        
-        // Eliminar el indicador de carga
-        const loadingIndicator = document.querySelector('.loading-indicator');
-        if (loadingIndicator) {
-            loadingIndicator.remove();
-        }
-        
-        // Mostrar mensaje de error como flash
-        showFlashMessage(`❌ Error al analizar el contrato: ${error.message}. Comprueba la consola del navegador (F12) para más detalles.`, 'error', panelContainer, 5000);
-    });
 }
 
 // Función para guardar un reporte en localStorage
@@ -552,3 +342,19 @@ function clearSavedReports() {
         showFlashMessage('❌ Error al eliminar reportes: ' + error.message, 'error');
     }
 }
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Inicializando la aplicación...");
+    
+    // Hacer las funciones accesibles globalmente
+    window.toggleReportCard = toggleReportCard;
+    window.removeElement = removeElement;
+    window.clearSavedReports = clearSavedReports;
+    
+    // Verificar la conexión con el servidor
+    checkServerConnection();
+    
+    // Cargar reportes guardados desde localStorage
+    loadSavedReports();
+});

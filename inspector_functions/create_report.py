@@ -41,6 +41,28 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
     Returns:
         dict: Un diccionario con los resultados del análisis para ser entregado al cliente
     """
+    # Determinar el directorio base de la aplicación
+    if getattr(sys, 'frozen', False):
+        # Si es ejecutable, usar el directorio donde está el ejecutable
+        base_dir = os.path.dirname(sys.executable)
+    else:
+        # Si es script, usar el directorio del proyecto
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
+    # Si input_pdf no es una ruta absoluta, considerar que es relativa al directorio base
+    if not os.path.isabs(input_pdf):
+        input_pdf = os.path.join(base_dir, input_pdf)
+    
+    # Asegurarse de que output_dir sea una ruta absoluta
+    if not os.path.isabs(output_dir):
+        output_dir = os.path.join(base_dir, output_dir)
+    
+    print(f"[DEBUG] create_report: Directorio base: {base_dir}")
+    print(f"[DEBUG] create_report: Archivo PDF: {input_pdf}")
+    print(f"[DEBUG] create_report: Directorio de salida: {output_dir}")
+    
+    # Asegurarse de que el directorio output_dir existe
+    os.makedirs(output_dir, exist_ok=True)
     # Obtener información del PDF (número de páginas y metadatos)
     page_count, metadata = get_pdf_info(input_pdf)
     standard_page_count = 10  # Número estándar de páginas para este tipo de contrato
@@ -65,7 +87,8 @@ def create_report(input_pdf="input.pdf", output_dir="output_split"):
         
         # Paso 1: Convertir PDF a texto
         print(f"[INFO] create_report: PASO 1 - Convirtiendo PDF a texto")
-        output_txt = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output.txt")
+        # Usar la variable base_dir ya definida para guardar output.txt
+        output_txt = os.path.join(base_dir, "output.txt")
         
         print(f"[DEBUG] create_report: La ruta del archivo de salida será {output_txt}")
         print(f"[DEBUG] create_report: Verificando existencia de {input_pdf}")
@@ -225,6 +248,29 @@ def get_report_html(report, output_dir="output_split"):
     Returns:
         str: HTML formateado del reporte
     """
+    # Determinar el directorio base de la aplicación
+    if getattr(sys, 'frozen', False):
+        # Si es ejecutable, usar el directorio donde está el ejecutable
+        base_dir = os.path.dirname(sys.executable)
+    else:
+        # Si es script, usar el directorio del proyecto
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
+    # Asegurarse de que output_dir sea una ruta absoluta
+    if not os.path.isabs(output_dir):
+        output_dir = os.path.join(base_dir, output_dir)
+    
+    print(f"[DEBUG] get_report_html: Directorio base: {base_dir}")    
+    print(f"[DEBUG] get_report_html: Directorio de salida final: {output_dir}")
+    print(f"[DEBUG] get_report_html: El directorio existe: {os.path.exists(output_dir)}")
+    
+    # Listar archivos en output_dir para diagnóstico
+    print(f"[DEBUG] get_report_html: Contenido de {output_dir}:")
+    if os.path.exists(output_dir):
+        for file in os.listdir(output_dir):
+            print(f"[DEBUG] get_report_html: - {file}")
+    else:
+        print(f"[DEBUG] get_report_html: ¡El directorio {output_dir} no existe!")
     html = []
     # Iniciar el contenedor principal del reporte en formato ASCII
     html.append('<div class="report-container">')
@@ -373,8 +419,22 @@ Fecha: {report['date']}
         html.append('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">')
         
         # Obtener la ruta al directorio de plantillas
-        base_dir = Path(__file__).parent.parent
+        if getattr(sys, 'frozen', False):
+            base_dir = os.path.dirname(sys.executable)
+        else:
+            base_dir = Path(__file__).parent.parent
+        
         template_dir = os.path.join(base_dir, "template")
+        print(f"[DEBUG] get_report_html: Directorio de plantillas: {template_dir}")
+        print(f"[DEBUG] get_report_html: El directorio de plantillas existe: {os.path.exists(template_dir)}")
+        
+        # Listar archivos en output_dir para diagnóstico
+        print(f"[DEBUG] get_report_html: Contenido de {output_dir}:")
+        if os.path.exists(output_dir):
+            for file in os.listdir(output_dir):
+                print(f"[DEBUG] get_report_html: - {file}")
+        else:
+            print(f"[DEBUG] get_report_html: ¡El directorio {output_dir} no existe!")
         
         # Crear desplegables para cada artículo, alternando contrato y plantilla
         for i in range(1, 16):
@@ -384,6 +444,10 @@ Fecha: {report['date']}
             output_article_path = os.path.join(output_dir, f'output_{article_key}.txt')
             # Ruta al archivo de plantilla del artículo
             template_article_path = os.path.join(template_dir, f'template_{article_key}.txt')
+            
+            # Verificar la existencia de los archivos (para diagnóstico)
+            print(f"[DEBUG] get_report_html: Verificando archivo output: {output_article_path} - Existe: {os.path.exists(output_article_path)}")
+            print(f"[DEBUG] get_report_html: Verificando archivo template: {template_article_path} - Existe: {os.path.exists(template_article_path)}")
             
             # Verificar si existen los archivos
             if os.path.exists(output_article_path):

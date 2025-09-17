@@ -1,100 +1,42 @@
-# Inspector de Contratos
+# Contract Inspector
 
-Este proyecto proporciona una interfaz web para analizar y comparar contratos con una plantilla de referencia.
+Aplicación de análisis de contratos con interfaz web y empaquetada como ejecutable.
 
-## Requisitos
+## Preparación para distribución
 
-- Python 3.8 o superior
-- Un entorno virtual de Python
-- Navegador web moderno
+Para preparar la aplicación para su distribución a los usuarios de la oficina, siga los siguientes pasos:
 
-## Instalación
+1. **Limpiar los entornos virtuales**:
+   - Ejecute `prepare_distribution.bat`
+   - Este script elimina los entornos virtuales existentes y crea uno nuevo con solo los paquetes esenciales
+   - Responda "s" cuando se le pregunte si desea continuar
 
-1. Clone este repositorio
-2. Configure el entorno virtual de Python:
-   ```
-   python -m venv .venv
-   ```
-3. Active el entorno virtual:
-   - En Linux/Mac:
-     ```
-     source .venv/bin/activate
-     ```
-   - En Windows:
-     ```
-     .venv\Scripts\activate
-     ```
-4. Instale las dependencias:
-   ```
-   pip install flask flask-cors pdfminer.six
-   ```
+2. **Crear el ejecutable**:
+   - Si eligió crear el ejecutable en el paso anterior, este se generará automáticamente
+   - Si no, puede ejecutar `create_executable.bat` en cualquier momento
 
-## Uso
+3. **Distribución**:
+   - El ejecutable se creará en la carpeta `dist\ContractInspector`
+   - Copie toda esta carpeta a los usuarios finales
+   - Los usuarios solo necesitan hacer doble clic en `iniciar_inspector.bat` para iniciar la aplicación
 
-### Iniciar el servidor
+## Estructura del paquete distribuible
 
-1. Ejecute el script de inicio según su sistema operativo:
-   - En Linux:
-     ```
-     ./start_server_linux.py
-     ```
-   - En Windows:
-     ```
-     start_server.bat
-     ```
+El paquete distribuible contiene:
 
-2. Acceder a la aplicación:
-   
-   El servidor mostrará las URLs disponibles al iniciar. Hay dos formas de acceder:
-   
-   - **Acceso local** (solo desde el mismo equipo donde se ejecuta el servidor):
-     ```
-     http://localhost:5000
-     ```
-   
-   - **Acceso desde la red** (desde otros equipos en la misma red):
-     ```
-     http://IP-DEL-SERVIDOR:5000
-     ```
-     Donde "IP-DEL-SERVIDOR" es la dirección IP que muestra el script al iniciar.
-     Por ejemplo: `http://192.168.1.138:5000`
+- `ContractInspector.exe`: El ejecutable principal
+- `iniciar_inspector.bat`: Script para iniciar la aplicación
+- Archivos necesarios para el funcionamiento (HTML, CSS, JS)
+- Carpetas con plantillas y funciones
 
-### Uso de la aplicación
+## Requisitos del sistema
 
-1. Verifique que el indicador verde junto al botón "Cargar contrato" esté encendido, lo que indica que el servidor está funcionando correctamente.
-2. Haga clic en "Cargar contrato PDF" y seleccione un archivo PDF de contrato.
-3. La aplicación procesará el archivo y mostrará un análisis detallado con comparaciones estadísticas y de párrafos contra la plantilla.
+- Windows 10 o superior
+- No requiere instalación de Python ni otras dependencias
+- Navegador web moderno (Chrome, Firefox, Edge)
 
-## Solución de problemas
+## Notas importantes
 
-- **Si el indicador de conexión está en rojo**: El servidor no está en ejecución. Asegúrese de ejecutar el script de inicio del servidor.
-- **Si no se muestra el reporte**: Revise la consola del navegador (F12) para ver mensajes de error detallados.
-- **Errores CORS**: Asegúrese de acceder a la aplicación usando la URL proporcionada por el servidor y no desde Live Server o cualquier otro servidor.
-
-## Estructura de archivos
-
-- `server.py`: Servidor Flask principal
-- `functions.js`: Funciones de JavaScript para el cliente
-- `index.html`: Página web principal
-- `style.css`: Estilos CSS
-- `inspector_functions/`: Módulos para el análisis de contratos
-  - `create_report.py`: Generación del reporte principal
-  - `inspector_statistics.py`: Análisis estadístico de texto
-  - `inspector_thermodynamics.py`: Análisis de párrafos
-  - `pdf_to_txt_pdfminer.py`: Conversión de PDF a texto
-  - `txt_to_txt_splitter.py`: División de texto en secciones
-
-## Notas
-
-Para evitar problemas de CORS, siempre use la aplicación desde la URL que proporciona el servidor Flask y no desde servidores de desarrollo como Live Server de VS Code.
-
-## Compartir con compañeros
-
-Para compartir esta aplicación con sus compañeros en la misma red:
-
-1. Ejecute el script de inicio del servidor (`start_server.bat` en Windows o `start_server_linux.py` en Linux)
-2. El script mostrará la dirección IP y puerto donde está disponible la aplicación (ejemplo: `http://192.168.1.138:5000`)
-3. Comparta esta dirección con sus compañeros
-4. Sus compañeros pueden acceder simplemente ingresando esa dirección en su navegador
-
-> **Nota:** Todos los usuarios deben estar conectados a la misma red (como la WLAN de la empresa) para que esto funcione.
+- No elimine ni modifique ningún archivo del paquete distribuible
+- Si necesita modificar la aplicación, hágalo en el proyecto original y vuelva a crear el ejecutable
+- La aplicación crea un servidor web local temporal que se cierra al cerrar la aplicación
